@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd" version="2.2" >
+
+    <persistence-unit name="VentasUP" transaction-type="RESOURCE_LOCAL">
+        <class>modelo.modelo.Rol</class>
+        <class>modelo.modelo.Curso</class>
+        <class>modelo.modelo.CursoTomados</class>
+        <class>modelo.modelo.Departamento</class>
+        <class>modelo.modelo.Evaluacion</class>
+        <class>modelo.modelo.Facultad</class>
+        <class>modelo.modelo.Periodo</class>
+        <class>modelo.modelo.Pregunta</class>
+        <class>modelo.modelo.Clase</class>
+        <class>modelo.modelo.Usuario</class>
+    </persistence-unit>
+    <properties>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://servidoraws.chhahj08jtdq.us-east-2.rds.amazonaws.com:3306/BDAulaVirtual?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC" />
+        <property name="javax.persistence.jdbc.user" value="admin" />
+        <property name="javax.persistence.jdbc.password" value="sistemas.2020" />
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.MysqlDataSource" />
+        <property name="eclipselink.logging.level.sql" value="FINE" />
+        <property name="eclipselink.loggin.parameters" value="true" />
+    </properties>
+</persistence-unit>
+</persistence>
