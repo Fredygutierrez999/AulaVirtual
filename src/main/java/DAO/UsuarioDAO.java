@@ -34,15 +34,7 @@ public class UsuarioDAO {
         Query query = em.createNamedQuery("findById.Administrador", Administrador.class);
         query.setParameter("IdUsuario", ID);
         try {
-            InterfaceUsuario objUsuariotmp  = (InterfaceUsuario)query.getSingleResult();
-            FactoriaUsuario objFactoria = new FactoriaUsuario();
-            usuario = objFactoria.getUsuario(objUsuariotmp.getRol().getNombre());
-            usuario.setClave(objUsuariotmp.getClave());
-            usuario.setNombre(objUsuariotmp.getNombre());
-            usuario.setFotoPerfil(objUsuariotmp.getFotoPerfil());
-            usuario.setRol(objUsuariotmp.getRol());
-            usuario.setUsuario(objUsuariotmp.getUsuario());
-            usuario.setIdUsuario(objUsuariotmp.getIdUsuario());
+            usuario  = (InterfaceUsuario)query.getSingleResult();
         } catch (Exception e) {
             System.out.print(e.getMessage());
         } finally {

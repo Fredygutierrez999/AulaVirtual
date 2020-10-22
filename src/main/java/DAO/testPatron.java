@@ -30,15 +30,17 @@ public class testPatron {
         objUsu.setFotoPerfil("Mi imagen");
         objUsu.setUsuario("augustopa");
         objUsu.setRol(new Rol(2, ""));
-        objDAo.insertar(objUsu);
+        //objDAo.insertar(objUsu);
 
-        //InterfaceUsuario objConsulta = objDAo.consultarXID(1);
-        //System.out.println(objConsulta);
+        /*CONSULTA POR ID*/
+        InterfaceUsuario objConsulta = objDAo.consultarXID(1);
+        System.out.println(objConsulta);
 
-        //List<InterfaceUsuario> lstUsuarios = objDAo.consultarTodos();
-        //for (int i = 0; i < lstUsuarios.size(); i++) {
-        //    System.out.println(lstUsuarios.get(i));
-        //}
+        /*CONSULTA POR ID*/
+        /*List<InterfaceUsuario> lstUsuarios = objDAo.consultarTodos();
+        for (int i = 0; i < lstUsuarios.size(); i++) {
+            System.out.println(lstUsuarios.get(i));
+        }*/
 
         //InterfaceUsuario objUsuElimina = new Administrador();
         //objUsuElimina.setIdUsuario(2);
