@@ -24,11 +24,11 @@ import sun.security.jca.GetInstance;
 @Table(name = "CursosTomados")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM CursosTomados p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM CursosTomados p WHERE p.IdCursosTomados = :IdCursosTomados")
+            @NamedQuery(name = "findAll.CursosTomados", query = "SELECT p FROM CursosTomados p"),
+            @NamedQuery(name = "findById.CursosTomados", query = "SELECT p FROM CursosTomados p WHERE p.IdCursosTomados = :IdCursosTomados")
         }
 )
-public class CursosTomados  implements Serializable {
+public class CursosTomados  implements Serializable,InterfaceModelo {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

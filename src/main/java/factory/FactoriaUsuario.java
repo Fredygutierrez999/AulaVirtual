@@ -13,7 +13,7 @@ import modelo.*;
  */
 public class FactoriaUsuario {
 
-    public InterfaceUsuario getNomina(String tipo) {
+    public InterfaceUsuario getUsuario(String tipo) {
         InterfaceUsuario cn = null;
         if (tipo.equals("Profesor")) {
             cn = new Profesor();

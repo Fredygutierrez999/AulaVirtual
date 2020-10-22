@@ -27,7 +27,7 @@ import javax.persistence.Table;
             @NamedQuery(name = "findById", query = "SELECT p FROM Departamento p WHERE p.IdDepartamento = :IdDepartamento")
         }
 )
-public class Departamento implements Serializable{
+public class Departamento implements Serializable,InterfaceModelo{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

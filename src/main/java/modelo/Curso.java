@@ -24,12 +24,12 @@ import javax.persistence.Table;
 @Table(name = "Curso")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM Curso p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM Curso p WHERE p.IdCurso = :IdCurso")
+            @NamedQuery(name = "findAll.Curso", query = "SELECT p FROM Curso p"),
+            @NamedQuery(name = "findById.Curso", query = "SELECT p FROM Curso p WHERE p.IdCurso = :IdCurso")
         }
 )
-public class Curso implements Serializable {
-    
+public class Curso implements Serializable, InterfaceModelo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdCurso;
@@ -41,10 +41,10 @@ public class Curso implements Serializable {
     private List<Clase> Clases;
     private List<Evaluacion> Evaluaciones;
 
-    private Curso() {
+    public Curso() {
     }
 
-    private Curso(int IdCurso, String Nombre, Departamento Departamento, String Descripcion, Profesor Usuario_Profesor, Date FechaCreacion) {
+    public Curso(int IdCurso, String Nombre, Departamento Departamento, String Descripcion, Profesor Usuario_Profesor, Date FechaCreacion) {
         this.IdCurso = IdCurso;
         this.Nombre = Nombre;
         this.Departamento = Departamento;
@@ -116,14 +116,10 @@ public class Curso implements Serializable {
     public void setEvaluaciones(List<Evaluacion> Evaluaciones) {
         this.Evaluaciones = Evaluaciones;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Curso{" + "IdCurso=" + IdCurso + ", Nombre=" + Nombre + ", Departamento=" + Departamento + ", Descripcion=" + Descripcion + ", Usuario_Profesor=" + Usuario_Profesor + ", FechaCreacion=" + FechaCreacion + '}';
     }
-    
-    
-    
+
 }

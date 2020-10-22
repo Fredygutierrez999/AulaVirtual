@@ -23,11 +23,11 @@ import javax.persistence.Table;
 @Table(name = "Evaluacion")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM Evaluacion p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM Evaluacion p WHERE p.IdClase = :IdClase")
+            @NamedQuery(name = "findAll.Evaluacion", query = "SELECT p FROM Evaluacion p"),
+            @NamedQuery(name = "findById.Evaluacion", query = "SELECT p FROM Evaluacion p WHERE p.IdClase = :IdClase")
         }
 )
-public class Evaluacion implements Serializable {
+public class Evaluacion implements Serializable,InterfaceModelo {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -7,9 +7,12 @@ package modelo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -22,11 +25,11 @@ import javax.persistence.Table;
 @Table(name = "Usuario")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM Usuario p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM Usuario p WHERE p.IdUsuario = :IdUsuario")
+            @NamedQuery(name = "findAll.Profesor", query = "SELECT p FROM Profesor p"),
+            @NamedQuery(name = "findById.Profesor", query = "SELECT p FROM Profesor p WHERE p.IdUsuario = :IdUsuario")
         }
 )
-public class Profesor implements InterfaceUsuario, Serializable {
+public class Profesor implements InterfaceUsuario, Serializable,InterfaceModelo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +38,8 @@ public class Profesor implements InterfaceUsuario, Serializable {
     private String Nombre;
     private String Clave;
     private String FotoPerfil;
+    @JoinColumn(name = "IdRol", referencedColumnName = "IdRol")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Rol rol;
 
     public Profesor() {

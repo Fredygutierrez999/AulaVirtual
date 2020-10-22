@@ -7,28 +7,31 @@ package modelo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  *
  * @author fredyalejandrogutierrezvelasquez
  */
-
 @Entity
 @Table(name = "Usuario")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM Administrador p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM Administrador p WHERE p.IdUsuario = :IdUsuario")
+            @NamedQuery(name = "findAll.Administrador", query = "SELECT p FROM Administrador p"),
+            @NamedQuery(name = "findById.Administrador", query = "SELECT p FROM Administrador p WHERE p.IdUsuario = :IdUsuario")
         }
 )
-public class Administrador  implements InterfaceUsuario, Serializable{
-   
+public class Administrador implements InterfaceUsuario, InterfaceModelo, Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdUsuario;
@@ -36,6 +39,8 @@ public class Administrador  implements InterfaceUsuario, Serializable{
     private String Nombre;
     private String Clave;
     private String FotoPerfil;
+    @JoinColumn(name = "IdRol", referencedColumnName = "IdRol")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Rol rol;
 
     public Administrador() {

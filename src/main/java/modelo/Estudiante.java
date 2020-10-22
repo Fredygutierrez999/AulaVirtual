@@ -22,11 +22,11 @@ import javax.persistence.Table;
 @Table(name = "Usuario")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM Usuario p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM Usuario p WHERE p.IdUsuario = :IdUsuario")
+            @NamedQuery(name = "findAll.Estudiante", query = "SELECT p FROM Estudiante p"),
+            @NamedQuery(name = "findById.Estudiante", query = "SELECT p FROM Estudiante p WHERE p.IdUsuario = :IdUsuario")
         }
 )
-public class Estudiante  implements InterfaceUsuario, Serializable{
+public class Estudiante  implements InterfaceUsuario, Serializable,InterfaceModelo{
    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -19,14 +19,14 @@ import javax.persistence.Table;
  * @author fredyalejandrogutierrezvelasquez
  */
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Facultad")
 @NamedQueries(
         {
-            @NamedQuery(name = "findAll", query = "SELECT p FROM Facultad p"),
-            @NamedQuery(name = "findById", query = "SELECT p FROM Facultad p WHERE p.IdFacultad = :IdFacultad")
+            @NamedQuery(name = "findAll.Facultad", query = "SELECT p FROM Facultad p"),
+            @NamedQuery(name = "findById.Facultad", query = "SELECT p FROM Facultad p WHERE p.IdFacultad = :IdFacultad")
         }
 )
-public class Facultad implements Serializable{
+public class Facultad implements Serializable,InterfaceModelo{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

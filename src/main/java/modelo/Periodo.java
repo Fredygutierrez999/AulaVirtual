@@ -5,18 +5,36 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.sql.DataSource;
 
 /**
  *
  * @author fredyalejandrogutierrezvelasquez
  */
-public class Periodo {
-    
+@Entity
+@Table(name = "Periodo")
+@NamedQueries(
+        {
+            @NamedQuery(name = "findAll.Periodo", query = "SELECT p FROM Periodo p"),
+            @NamedQuery(name = "findById.Periodo", query = "SELECT p FROM Periodo p WHERE p.IdPeriodo = :IdPeriodo")
+        }
+)
+public class Periodo implements InterfaceModelo, Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdPeriodo;
     private String Nombre;
     private Date Fechainicial;
@@ -78,5 +96,5 @@ public class Periodo {
     public String toString() {
         return "periodo{" + "IdPeriodo=" + IdPeriodo + ", Nombre=" + Nombre + ", Fechainicial=" + Fechainicial + ", Fechafinal=" + Fechafinal + ", Activo=" + Activo + '}';
     }
-    
+
 }
