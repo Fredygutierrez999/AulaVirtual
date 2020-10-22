@@ -28,5 +28,22 @@ public class FactoriaUsuario {
         }
         return cn;
     }
+    
+    public InterfaceUsuario getUsuario(Rol obj) {
+        InterfaceUsuario cn = null;
+        if (obj.getNombre().equals("Profesor")) {
+            cn = new Profesor();
+        } else {
+            if (obj.getNombre().equals("Estudiante")) {
+                cn = new Estudiante();
+            } else {
+                if (obj.getNombre().equals("Administrador")) {
+                    cn = new Administrador();
+                }
+            }
+        }
+        cn.setRol(obj);
+        return cn;
+    }
 
 }

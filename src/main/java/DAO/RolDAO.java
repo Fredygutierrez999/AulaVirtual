@@ -26,7 +26,7 @@ public class RolDAO {
 
     private EntityManager em;
 
-    public InterfaceModelo consultarXID(Integer ID) {
+    public Rol consultarXID(Integer ID) {
         EntityManagerFactory factoriaSesion = Conexion.getInstancia();
         em = factoriaSesion.createEntityManager();
         Rol rol = new Rol();
@@ -82,7 +82,7 @@ public class RolDAO {
         return true;
     }
 
-    public boolean actualizar(Rol obj) {
+    public boolean actualizar(Rol obj) {      
         EntityManagerFactory factoriaSesion = Conexion.getInstancia();
         em = factoriaSesion.createEntityManager();
         EntityTransaction tx = null;
@@ -92,30 +92,30 @@ public class RolDAO {
             tx.begin();
             em.merge(obj);
             tx.commit();
-            mensaje = "El usuario se ha actualizado exitosamente";
+            System.out.println("El rol se ha actualizado exitosamente");
         } catch (PersistenceException e) {
             em.getTransaction().rollback();
-            mensaje = "El usuario no ha sido posible crearlospor favor intentelo de nuevo";
+            System.err.println("El rol no se ha modificado");
         } finally {
             em.close();
         }
         return true;
     }
 
-    public boolean eliminar(InterfaceModelo obj) {
+    public boolean eliminar(Rol obj) {
+        Rol objEliminar = consultarXID(obj.getIdRol());
         EntityManagerFactory factoriaSesion = Conexion.getInstancia();
         em = factoriaSesion.createEntityManager();
         EntityTransaction tx = null;
-        String mensaje = "";
         try {
             tx = em.getTransaction();
             tx.begin();
-            em.remove(em.merge(obj));
+            em.remove(em.merge(objEliminar));
             tx.commit();
-            mensaje = "eliminado";
+            System.out.println("El rol se ha eliminado");
         } catch (PersistenceException e) {
             em.getTransaction().rollback();
-            mensaje = null;
+            System.err.println("El rol no se ha eliminado");
         } finally {
             em.close();
         }

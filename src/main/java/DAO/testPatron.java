@@ -16,32 +16,34 @@ import modelo.*;
 public class testPatron {
 
     public static void main(String[] args) {
-        /*RolDAO rolDato = new RolDAO();
-        Rol obj= new Rol();
-        obj.setNombre("Fredy");
-        rolDato.insertar(obj);*/
+        /*CONSULTA ROL POR ID*/
+        RolDAO rolDato = new RolDAO();
+        Rol objRol = rolDato.consultarXID(2);
         
         
         UsuarioDAO objDAo = new UsuarioDAO();
+        
+        /*INSERTA NUEVO USUARIO*/
         FactoriaUsuario factoria = new FactoriaUsuario();
-        InterfaceUsuario objUsu = factoria.getUsuario("Profesor");
+        InterfaceUsuario objUsu = factoria.getUsuario(objRol);
         objUsu.setNombre("Profe. Agusto pataqui 369");
         objUsu.setClave("profesores2020");
         objUsu.setFotoPerfil("Mi imagen");
         objUsu.setUsuario("augustopa");
-        objUsu.setRol(new Rol(2, ""));
+        objUsu.setRol(objRol);
         //objDAo.insertar(objUsu);
 
         /*CONSULTA POR ID*/
         InterfaceUsuario objConsulta = objDAo.consultarXID(1);
         System.out.println(objConsulta);
 
-        /*CONSULTA POR ID*/
-        /*List<InterfaceUsuario> lstUsuarios = objDAo.consultarTodos();
+        /*CONSULTA TODOS*/
+        List<InterfaceUsuario> lstUsuarios = objDAo.consultarTodos();
         for (int i = 0; i < lstUsuarios.size(); i++) {
             System.out.println(lstUsuarios.get(i));
-        }*/
+        }
 
+        /*ELIMINAR*/
         //InterfaceUsuario objUsuElimina = new Administrador();
         //objUsuElimina.setIdUsuario(2);
         //objDAo.eliminar(objUsuElimina);

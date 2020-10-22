@@ -26,7 +26,7 @@ public class PreguntaDAO {
 
     private EntityManager em;
 
-    public InterfaceModelo consultarXID(Integer ID) {
+    public Pregunta consultarXID(Integer ID) {
         EntityManagerFactory factoriaSesion = Conexion.getInstancia();
         em = factoriaSesion.createEntityManager();
         Pregunta pregunta = new Pregunta();
@@ -62,7 +62,7 @@ public class PreguntaDAO {
         return listado;
     }
 
-    public boolean insertar(InterfaceModelo obj) {
+    public boolean insertar(Pregunta obj) {
         EntityManagerFactory factoriaSesion = Conexion.getInstancia();
         em = factoriaSesion.createEntityManager();
         EntityTransaction tx = null;
@@ -72,10 +72,10 @@ public class PreguntaDAO {
             tx.begin();
             em.persist(obj);
             tx.commit();
-            mensaje = "El Pregunta ha sido creado exitosamente";
+            mensaje = "El " + obj.getClass().getName() + " ha sido creado exitosamente";
         } catch (PersistenceException e) {
             em.getTransaction().rollback();
-            mensaje = "El Pregunta no ha sido posible crearlospor favor intentelo de nuevo";
+            mensaje = "El " + obj.getClass().getName() + " no ha sido posible crearlospor favor intentelo de nuevo";
         } finally {
             em.close();
         }
@@ -92,30 +92,30 @@ public class PreguntaDAO {
             tx.begin();
             em.merge(obj);
             tx.commit();
-            mensaje = "El Pregunta se ha actualizado exitosamente";
+            System.out.println("La pregunta se ha actualizado exitosamente");
         } catch (PersistenceException e) {
             em.getTransaction().rollback();
-            mensaje = "El Pregunta no ha sido posible crearlospor favor intentelo de nuevo";
+            System.err.println("La pregunta no se ha modificado");
         } finally {
             em.close();
         }
         return true;
     }
 
-    public boolean eliminar(InterfaceModelo obj) {
+    public boolean eliminar(Pregunta obj) {
+        Pregunta objEliminar = consultarXID(obj.getIdPregunta());
         EntityManagerFactory factoriaSesion = Conexion.getInstancia();
         em = factoriaSesion.createEntityManager();
         EntityTransaction tx = null;
-        String mensaje = "";
         try {
             tx = em.getTransaction();
             tx.begin();
-            em.remove(em.merge(obj));
+            em.remove(em.merge(objEliminar));
             tx.commit();
-            mensaje = "eliminado";
+            System.out.println("El rol se ha eliminado");
         } catch (PersistenceException e) {
             em.getTransaction().rollback();
-            mensaje = null;
+            System.err.println("El rol no se ha eliminado");
         } finally {
             em.close();
         }
