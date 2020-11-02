@@ -5,7 +5,6 @@
  */
 package modelo;
 
-import com.sun.javafx.scene.control.skin.CustomColorDialog;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import sun.security.jca.GetInstance;
 
 /**
  *
