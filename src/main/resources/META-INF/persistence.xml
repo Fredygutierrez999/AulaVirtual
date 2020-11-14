@@ -3,27 +3,11 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd" version="2.2" >
+<persistence-unit name="AulaWeb" transaccion-type="JTA">
+    <jta-data-source>jdbc/AulaVirtual</jta-data-source>
+    <properties>
+    </properties>
+  </persistence-unit>
 
-    <persistence-unit name="AulaWeb" transaction-type="RESOURCE_LOCAL">
-        <class>modelo.Rol</class>
-        <class>modelo.Administrador</class>
-        <class>modelo.Clase</class>
-        <class>modelo.Curso</class>
-        <class>modelo.CursosTomados</class>
-        <class>modelo.Departamento</class>
-        <class>modelo.Estudiante</class>
-        <class>modelo.Evaluacion</class>
-        <class>modelo.Facultad</class>
-        <class>modelo.Profesor</class>
-        <class>modelo.Pregunta</class>
-        <properties>
-            
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://servidoraws.chhahj08jtdq.us-east-2.rds.amazonaws.com:3306/BDAulaVirtual"/>
-            <property name="javax.persistence.jdbc.user" value="admin"/>
-            <property name="javax.persistence.jdbc.password" value="sistemas.2020"/>
-            <property name="javax.persistence.schema-generation.database.action" value="create"/>
-                
-        </properties>
-    </persistence-unit>
+   
 </persistence>
