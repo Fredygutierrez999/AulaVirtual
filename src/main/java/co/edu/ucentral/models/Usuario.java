@@ -35,7 +35,9 @@ import javax.persistence.Table;
     @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario"),
     @NamedQuery(name = "Usuario.findByClave", query = "SELECT u FROM Usuario u WHERE u.clave = :clave"),
     @NamedQuery(name = "Usuario.findByNombre", query = "SELECT u FROM Usuario u WHERE u.nombre = :nombre"),
-    @NamedQuery(name = "Usuario.findByFotoPerfil", query = "SELECT u FROM Usuario u WHERE u.fotoPerfil = :fotoPerfil")})
+    @NamedQuery(name = "Usuario.findByFotoPerfil", query = "SELECT u FROM Usuario u WHERE u.fotoPerfil = :fotoPerfil"),
+    @NamedQuery(name = "Usuario.findByUsuarioAndPass", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario AND u.clave= :clave ")
+})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;

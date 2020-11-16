@@ -4,7 +4,7 @@
 
     <groupId>co.edu.central.ventas</groupId>
     <artifactId>AulaVirtual</artifactId>
-    <version>co.edu.central.ventas</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
 
     <name>AulaVirtual</name>

@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 
 /**
  *
@@ -44,6 +45,14 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     @Override
     public void deleteUser(Usuario usuario) {
      em.remove(em.merge(usuario));
+    }
+
+    @Override
+    public Usuario findByUserAndPassword(Usuario usuario) {
+        Query query =em.createNamedQuery("Usuario.findByUsuarioAndPass", Usuario.class);
+        query.setParameter("usuario",usuario.getNombre());
+        query.setParameter("clave",usuario.getClave());
+        return (Usuario) query.getSingleResult();
     }
 
 }

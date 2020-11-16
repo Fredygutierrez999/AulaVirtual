@@ -27,7 +27,7 @@ import javax.persistence.Table;
  * @author Adolfo
  */
 @Entity
-@Table(name = "Pregunta", catalog = "BDAulaVirtual", schema = "")
+@Table(name = "Pregunta")
 @NamedQueries({
     @NamedQuery(name = "Pregunta.findAll", query = "SELECT p FROM Pregunta p"),
     @NamedQuery(name = "Pregunta.findByIdPregunta", query = "SELECT p FROM Pregunta p WHERE p.idPregunta = :idPregunta"),
