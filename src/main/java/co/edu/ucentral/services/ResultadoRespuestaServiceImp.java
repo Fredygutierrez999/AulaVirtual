@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.ResultadoRespuestaDAO;
 import co.edu.ucentral.models.ResultadoRespuesta;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class ResultadoRespuestaServiceImp implements ResultadoRespuestaService{
 
     @Inject

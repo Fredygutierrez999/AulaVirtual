@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.RolDAO;
 import co.edu.ucentral.models.Rol;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class RolServiceImp implements RolService{
 
     @Inject

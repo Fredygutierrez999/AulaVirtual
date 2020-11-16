@@ -3,6 +3,7 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.CursosTomadosDAO;
 import co.edu.ucentral.models.CursosTomados;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /*
@@ -15,6 +16,7 @@ import javax.inject.Inject;
  *
  * @author Adolfo
  */
+@Stateless
 public class CursosTomadoServicesImp implements CursosTomadoService{
 
     @Inject

@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.PeriodoDAO;
 import co.edu.ucentral.models.Periodo;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class PeriodoServiceImp implements PeriodoService{
 
     @Inject

@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.PreguntaDAO;
 import co.edu.ucentral.models.Pregunta;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class PreguntaServiceImp implements PreguntaService {
 
     @Inject

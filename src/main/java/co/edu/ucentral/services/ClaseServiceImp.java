@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.ClaseDao;
 import co.edu.ucentral.models.Clase;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class ClaseServiceImp implements ClaseService{
 
     @Inject

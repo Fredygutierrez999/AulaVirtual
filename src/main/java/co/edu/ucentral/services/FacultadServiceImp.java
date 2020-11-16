@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.FacultadDAO;
 import co.edu.ucentral.models.Facultad;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class FacultadServiceImp implements FacultadService {
 
     @Inject

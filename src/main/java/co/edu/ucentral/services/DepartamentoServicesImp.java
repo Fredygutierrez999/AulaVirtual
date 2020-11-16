@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.DepartamentoDAO;
 import co.edu.ucentral.models.Departamento;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class DepartamentoServicesImp implements DepartamentoServices {
 
     @Inject

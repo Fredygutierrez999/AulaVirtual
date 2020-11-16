@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.EvaluacionDAO;
 import co.edu.ucentral.models.Evaluacion;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class EvaluacionServiceImp implements EvaluacionService{
 
     @Inject

@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.UsuarioDAO;
 import co.edu.ucentral.models.Usuario;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class UsuarioServiceImpl implements UsuarioService{
 
     @Inject

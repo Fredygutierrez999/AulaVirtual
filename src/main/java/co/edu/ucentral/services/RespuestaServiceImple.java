@@ -8,12 +8,14 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.datos.RespuestaDAO;
 import co.edu.ucentral.models.Respuesta;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Adolfo
  */
+@Stateless
 public class RespuestaServiceImple implements RespuestaService{
 
     @Inject
