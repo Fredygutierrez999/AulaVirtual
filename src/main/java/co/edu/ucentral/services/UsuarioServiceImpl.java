@@ -20,6 +20,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Inject
     private UsuarioDAO usuarioDAO;
+
     @Override
     public List<Usuario> listadoUsuario() {
         return usuarioDAO.listUser();

@@ -7,11 +7,12 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.CursosTomados;
 import java.util.List;
-
+import javax.ejb.Local;
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface CursosTomadoService {
     public List<CursosTomados> listadoCursosTomados();
     public CursosTomados clasePorId(CursosTomados cursosTomados);

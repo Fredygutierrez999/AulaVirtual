@@ -7,11 +7,13 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.Periodo;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface PeriodoService {
     public List<Periodo> listadoPeriodo();
     public Periodo periodoPorId(Periodo periodo);

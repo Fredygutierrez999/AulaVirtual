@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Index aula virtual</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./WEB-INF/templates/templateLogin.xhtml">
+            <ui:define name="contentlogin">
+
+
+                <div id="layoutAuthentication_content">
+                    <main>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-5">
+                                    <!-- Basic login form-->
+                                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                        <div class="card-header justify-content-center">
+                                            <h3 class="font-weight-light my-4">
+                                                #{msgs['login.titulo']}
+                                            </h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <!-- Login form-->
+                                            <h:form>
+                                                <!-- Form Group (email address)-->
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">#{msgs['login.usuario']}</label>
+                                                    <h:inputText id="usuario" value="#{usuarioBean.usuario.usuario}" class="form-control"></h:inputText>
+                                                </div>
+                                                <!-- Form Group (password)-->
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="clave">#{msgs['login.clave']}</label>
+                                                    <h:inputSecret id="clave" value="#{usuarioBean.usuario.clave}" class="form-control" ></h:inputSecret>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputPassword">#{msgs['login.lenguaje']}</label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" id="paisCol" name="chkpais"  checked="checked" value="ESP" type="radio"/>
+                                                        <label class="form-check-label" for="paisCol">
+                                                            <img src="resources/imagenes/col.png"></img>
+                                                        </label>
+                                                        <br/>
+                                                        <input class="form-check-input" id="paisEeuu" name="chkpais" value="ENG" type="radio"/>
+                                                        <label class="form-check-label" for="paisEeuu">
+                                                            <img src="resources/imagenes/eeuu.png"></img>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- Form Group (remember password checkbox)-->
+                                                <div class="form-group" style="display: none">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox"/>
+                                                        <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Form Group (login box)-->
+                                                <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0" >
+                                                    <a class="small"  style="display: none" href="auth-password-basic.html">Forgot Password?</a>
+                                                    <h:commandButton value="#{msgs['login.accion']}" class="btn btn-primary" action="#{usuarioBean.validarUsuario()}">
+                                                    </h:commandButton>
+                                                </div>
+                                                <h:commandLink class="nav-link active" action="consultaUsuarios">consulta</h:commandLink>
+                                            </h:form>
+                                            
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <div class="small">
+                                                <a  style="display: none" href="auth-register-basic.html">Need an account? Sign up!</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

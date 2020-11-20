@@ -7,11 +7,12 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.Facultad;
 import java.util.List;
-
+import javax.ejb.Local;
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface FacultadService {
     public List<Facultad> listadoFacultad();
     public Facultad facultadPorId(Facultad facultad);

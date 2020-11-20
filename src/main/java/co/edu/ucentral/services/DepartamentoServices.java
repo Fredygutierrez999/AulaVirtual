@@ -7,11 +7,12 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.Departamento;
 import java.util.List;
-
+import javax.ejb.Local;
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface DepartamentoServices {
     public List<Departamento> listadoDepartamento();
     public Departamento clasePorId(Departamento departamento);

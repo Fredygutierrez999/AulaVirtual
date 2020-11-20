@@ -7,11 +7,13 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.Usuario;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface UsuarioService {
     public List<Usuario> listadoUsuario();
     public Usuario rolPorId(Usuario usuario);

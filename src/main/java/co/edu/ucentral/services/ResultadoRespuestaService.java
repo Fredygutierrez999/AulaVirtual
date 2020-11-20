@@ -7,11 +7,13 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.ResultadoRespuesta;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface ResultadoRespuestaService {
     public List<ResultadoRespuesta> listadoResultadoRespuesta();
     public ResultadoRespuesta resultadoRespuestaPorId(ResultadoRespuesta resultadoRespuesta);

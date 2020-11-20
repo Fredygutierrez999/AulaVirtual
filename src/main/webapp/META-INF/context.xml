@@ -1,5 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/AulaVirtual">
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="amazon_aula" password="sistemas.2020" type="javax.sql.DataSource" url="jdbc:mysql://servidoraws.chhahj08jtdq.us-east-2.rds.amazonaws.com:3306/BDAulaVirtual?zeroDateTimeBehavior=CONVERT_TO_NULL" username="admin"/>
-  <ResourceLink global="amazon_aula" name="Aula" type="javax.sql.DataSource"/>
-</Context>
+<Context path="/AulaVirtual"/>

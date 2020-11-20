@@ -7,11 +7,13 @@ package co.edu.ucentral.services;
 
 import co.edu.ucentral.models.Rol;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
  * @author Adolfo
  */
+@Local
 public interface RolService {
     public List<Rol> listadoRol();
     public Rol rolPorId(Rol rol);
