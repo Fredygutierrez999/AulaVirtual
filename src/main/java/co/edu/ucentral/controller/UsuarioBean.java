@@ -26,12 +26,8 @@ public class UsuarioBean {
     
     @PostConstruct
     public void inicializar(){
-        try {
+      
         usuarios = usuarioService.listadoUsuario();
-            System.out.println("this = " +  usuarios.size());
-        } catch (Exception e) {
-            System.out.println("fallo " + e.getMessage());
-        }
         usuario = new Usuario();
     }
 
@@ -40,7 +36,8 @@ public class UsuarioBean {
     }
 
     public String validarUsuario(){
-        Usuario tmp =this.usuarioService.usuarioPorClave(usuario);
+         Usuario tmp =this.usuarioService.usuarioPorClave(usuario);
+        
         if(tmp == null){
             this.mensaje = "Datos incorrectos.";
             return "login";
