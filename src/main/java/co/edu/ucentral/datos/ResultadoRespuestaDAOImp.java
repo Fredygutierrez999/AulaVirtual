@@ -9,11 +9,12 @@ import co.edu.ucentral.models.ResultadoRespuesta;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 
 @Stateless
 public class ResultadoRespuestaDAOImp implements ResultadoRespuestaDAO{
-    @PersistenceUnit(name = "AulaWeb")
+   @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override

@@ -9,7 +9,8 @@ import co.edu.ucentral.models.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
+
 import javax.persistence.Query;
 
 /**
@@ -19,7 +20,7 @@ import javax.persistence.Query;
 @Stateless
 public class UsuarioDAOImpl implements UsuarioDAO {
 
-    @PersistenceUnit(name = "AulaWeb")
+    @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override

@@ -26,7 +26,12 @@ public class UsuarioBean {
     
     @PostConstruct
     public void inicializar(){
-        //usuarios = usuarioService.listadoUsuario();
+        try {
+        usuarios = usuarioService.listadoUsuario();
+            System.out.println("this = " +  usuarios.size());
+        } catch (Exception e) {
+            System.out.println("fallo " + e.getMessage());
+        }
         usuario = new Usuario();
     }
 
