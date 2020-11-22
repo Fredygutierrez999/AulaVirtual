@@ -29,12 +29,17 @@
                                                 <!-- Form Group (email address)-->
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="usuario">#{msgs['login.usuario']}</label>
-                                                    <h:inputText id="usuario" value="#{usuarioBean.usuario.usuario}" class="form-control"></h:inputText>
+                                                    <h:inputText required="true" id="usuario"  value="#{usuarioBean.usuario.usuario}" class="form-control" />
+                                                    <h:message for="usuario" class="form-control alert alert-danger" />
+
+
                                                 </div>
                                                 <!-- Form Group (password)-->
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="clave">#{msgs['login.clave']}</label>
-                                                    <h:inputSecret id="clave" value="#{usuarioBean.usuario.clave}" class="form-control" ></h:inputSecret>
+                                                    <h:inputSecret required="true"  id="clave" value="#{usuarioBean.usuario.clave}" class="form-control" />
+                                                    <h:message for="clave" class="form-control alert alert-danger" />
+
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputPassword">#{msgs['login.lenguaje']}</label>
@@ -66,7 +71,7 @@
                                                 </div>
                                                 <h:commandLink class="nav-link active" action="consultaUsuarios">consulta</h:commandLink>
                                             </h:form>
-                                            
+
                                         </div>
                                         <div class="card-footer text-center">
                                             <div class="small">
