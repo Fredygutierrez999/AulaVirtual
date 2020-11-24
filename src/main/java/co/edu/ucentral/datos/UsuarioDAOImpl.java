@@ -52,7 +52,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         Query query =em.createNamedQuery("Usuario.findByUsuarioAndPass", Usuario.class);
         query.setParameter("usuario",usuario.getUsuario());
         query.setParameter("clave",usuario.getClave());
-        return (Usuario) query.getSingleResult();
+        try {
+            return (Usuario) query.getSingleResult();
+        } catch (Exception e) {
+            System.err.println("Error al autenticarse"+ e.getMessage());
+            return  null;
+        }
+        
     }
 
 }

@@ -13,8 +13,9 @@ import javax.persistence.PersistenceContext;
 
 @Stateless
 public class CursoDAOImp implements CursoDAO{
-   
-    @PersistenceContext(unitName = "AulaWeb")
+
+   @PersistenceContext(unitName = "AulaWeb")
+
     private EntityManager em;
 
     @Override

@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class PreguntaDAOImpl implements PreguntaDAO{
-    
+
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 

@@ -24,6 +24,13 @@ public class UsuarioBean {
     private List<Usuario> usuarios;
     private String mensaje;
 
+    @PostConstruct
+    public void inicializar() {
+
+        usuarios = usuarioService.listadoUsuario();
+        usuario = new Usuario();
+    }
+
     public UsuarioBean() {
         this.usuario = new Usuario();
     }
@@ -33,31 +40,30 @@ public class UsuarioBean {
         if (tmp != null) {
             return "index";
         } else {
-            this.mensaje = "Datos incorrectos.";
-            return "login";
+            if (tmp == null) {
+                this.mensaje = "Datos incorrectos.";
+                return "login";
+            }
         }
+        return "login";
     }
 
     public String consultarUsuario() {
         usuarios = usuarioService.listadoUsuario();
         return "usuarioconsultar";
+
     }
 
-    
-    
     public String editar(int id) {
         return "usuarioeditar";
     }
-    
-    
+
     public String eliminar(Usuario usuario) {
         usuarioService.eliminarUsuario(usuario);
         usuarios = usuarioService.listadoUsuario();
         return "usuarioconsultar";
     }
-    
-    
-    
+
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -82,6 +88,4 @@ public class UsuarioBean {
         this.mensaje = mensaje;
     }
 
-    
-    
 }

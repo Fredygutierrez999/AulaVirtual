@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class FacultadDAOImp implements FacultadDAO{
-    
+
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 

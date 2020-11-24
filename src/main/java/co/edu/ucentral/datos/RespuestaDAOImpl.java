@@ -10,14 +10,13 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 /**
  *
  * @author Adolfo
  */
 @Stateless
 public class RespuestaDAOImpl implements RespuestaDAO{
-    
+
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 

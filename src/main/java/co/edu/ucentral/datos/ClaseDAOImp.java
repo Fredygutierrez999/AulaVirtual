@@ -13,8 +13,9 @@ import javax.persistence.PersistenceContext;
 
 @Stateless
 public class ClaseDAOImp implements  ClaseDao{
-   
+    
     @PersistenceContext(unitName = "AulaWeb")
+
     private EntityManager em;
 
     @Override

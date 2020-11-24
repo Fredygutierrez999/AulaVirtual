@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class PeriodoDAOImp  implements PeriodoDAO{
-    
+
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
