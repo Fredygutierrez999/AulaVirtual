@@ -24,8 +24,15 @@
     <navigation-rule id="3">
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-outcome>consultaUsuarios</from-outcome>
-            <to-view-id>/pages/usuario/consultaUsuarios.xhtml</to-view-id>
+            <from-outcome>usuarioconsultar</from-outcome>
+            <to-view-id>/pages/usuario/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="3">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>usuarioeditar</from-outcome>
+            <to-view-id>/pages/usuario/editar.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     

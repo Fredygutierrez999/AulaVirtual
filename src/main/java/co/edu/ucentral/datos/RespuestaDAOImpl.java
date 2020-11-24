@@ -9,7 +9,7 @@ import co.edu.ucentral.models.Respuesta;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -17,7 +17,8 @@ import javax.persistence.PersistenceUnit;
  */
 @Stateless
 public class RespuestaDAOImpl implements RespuestaDAO{
-    @PersistenceUnit(name = "AulaWeb")
+    
+    @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override

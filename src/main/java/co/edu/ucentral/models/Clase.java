@@ -27,7 +27,7 @@ import javax.persistence.TemporalType;
  * @author Adolfo
  */
 @Entity
-@Table(name = "Clase", catalog = "BDAulaVirtual", schema = "")
+@Table(name = "Clase")
 @NamedQueries({
     @NamedQuery(name = "Clase.findAll", query = "SELECT c FROM Clase c"),
     @NamedQuery(name = "Clase.findByIdClase", query = "SELECT c FROM Clase c WHERE c.idClase = :idClase"),

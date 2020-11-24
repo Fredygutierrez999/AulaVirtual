@@ -9,7 +9,7 @@ import co.edu.ucentral.models.Facultad;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -17,7 +17,8 @@ import javax.persistence.PersistenceUnit;
  */
 @Stateless
 public class FacultadDAOImp implements FacultadDAO{
-    @PersistenceUnit(name = "AulaWeb")
+    
+    @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override

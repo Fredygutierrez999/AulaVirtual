@@ -30,7 +30,7 @@ import javax.persistence.TemporalType;
  * @author Adolfo
  */
 @Entity
-@Table(name = "Curso", catalog = "BDAulaVirtual", schema = "")
+@Table(name = "Curso")
 @NamedQueries({
     @NamedQuery(name = "Curso.findAll", query = "SELECT c FROM Curso c"),
     @NamedQuery(name = "Curso.findByIdCurso", query = "SELECT c FROM Curso c WHERE c.idCurso = :idCurso"),

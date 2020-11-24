@@ -17,34 +17,47 @@ import co.edu.ucentral.services.UsuarioService;
 @Named("usuarioBean")
 @RequestScoped
 public class UsuarioBean {
-    
+
     @Inject
     private UsuarioService usuarioService;
     private Usuario usuario;
     private List<Usuario> usuarios;
     private String mensaje;
-    
-    @PostConstruct
-    public void inicializar(){
-        //usuarios = usuarioService.listadoUsuario();
-        usuario = new Usuario();
-    }
 
-    public UsuarioBean(){
+    public UsuarioBean() {
         this.usuario = new Usuario();
     }
 
-    public String validarUsuario(){
-        Usuario tmp =this.usuarioService.usuarioPorClave(usuario);
-        if(tmp == null){
+    public String validarUsuario() {
+        Usuario tmp = this.usuarioService.usuarioPorClave(usuario);
+        if (tmp != null) {
+            return "index";
+        } else {
             this.mensaje = "Datos incorrectos.";
             return "login";
-        }else{
-            return "index";
         }
     }
-    
 
+    public String consultarUsuario() {
+        usuarios = usuarioService.listadoUsuario();
+        return "usuarioconsultar";
+    }
+
+    
+    
+    public String editar(int id) {
+        return "usuarioeditar";
+    }
+    
+    
+    public String eliminar(Usuario usuario) {
+        usuarioService.eliminarUsuario(usuario);
+        usuarios = usuarioService.listadoUsuario();
+        return "usuarioconsultar";
+    }
+    
+    
+    
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -60,6 +73,15 @@ public class UsuarioBean {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
 
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
+    
+    
 }

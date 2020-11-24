@@ -29,12 +29,15 @@
                                                 <!-- Form Group (email address)-->
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="usuario">#{msgs['login.usuario']}</label>
-                                                    <h:inputText id="usuario" value="#{usuarioBean.usuario.usuario}" class="form-control"></h:inputText>
+                                                    <h:inputText id="usuario" value="#{usuarioBean.usuario.usuario}" class="form-control" required="required"></h:inputText>
                                                 </div>
                                                 <!-- Form Group (password)-->
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="clave">#{msgs['login.clave']}</label>
-                                                    <h:inputSecret id="clave" value="#{usuarioBean.usuario.clave}" class="form-control" ></h:inputSecret>
+                                                    <h:inputSecret id="clave" value="#{usuarioBean.usuario.clave}" class="form-control" required="required" ></h:inputSecret>
+                                                </div>
+                                                <div class="alert alert-link">
+                                                    #{mensaje}
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputPassword">#{msgs['login.lenguaje']}</label>

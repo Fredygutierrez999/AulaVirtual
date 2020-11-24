@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-  <persistence-unit name="AulaWeb" transaccion-type="JTA" >
+  <persistence-unit name="AulaWeb" transaccion-type="JTA" transaction-type="JTA">
     <jta-data-source>jdbc/AulaVirtual</jta-data-source>
+    <class>co.edu.ucentral.models.Clase</class>
+    <class>co.edu.ucentral.models.Curso</class>
+    <class>co.edu.ucentral.models.CursosTomados</class>
+    <class>co.edu.ucentral.models.Departamento</class>
+    <class>co.edu.ucentral.models.Evaluacion</class>
+    <class>co.edu.ucentral.models.Facultad</class>
+    <class>co.edu.ucentral.models.Periodo</class>
+    <class>co.edu.ucentral.models.Pregunta</class>
+    <class>co.edu.ucentral.models.Respuesta</class>
+    <class>co.edu.ucentral.models.ResultadoRespuesta</class>
+    <class>co.edu.ucentral.models.Rol</class>
+    <class>co.edu.ucentral.models.Usuario</class>
+    <properties/>
   </persistence-unit>
 </persistence>

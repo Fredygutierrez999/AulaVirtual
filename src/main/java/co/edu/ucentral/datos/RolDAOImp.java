@@ -9,12 +9,12 @@ import co.edu.ucentral.models.Rol;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 
 @Stateless
 public class RolDAOImp implements RolDAO {
 
-    @PersistenceUnit(name = "AulaWeb")
+    @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override

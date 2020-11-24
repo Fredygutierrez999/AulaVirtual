@@ -847,7 +847,9 @@
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
             <a class="navbar-brand active" href="index.html">
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Aula virtual</font>
+                    <font style="vertical-align: inherit;">
+                        <span class="fa fa-graduation-cap"></span>
+                        Aula virtual</font>
                 </font>
             </a>
             <h:button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle">
@@ -872,7 +874,7 @@
                 </div>
             </h:form>
             <ul class="navbar-nav align-items-center ml-auto">
-                
+
                 <!-- Navbar Search Dropdown-->
                 <!-- * * Note: * * Visible only below the md breakpoint-->
                 <li class="nav-item dropdown no-caret mr-3 d-md-none">
@@ -1062,208 +1064,198 @@
             </ul>
         </nav>
         <div id="layoutSidenav">
+
+
             <div id="layoutSidenav_nav">
-                <nav class="sidenav shadow-right sidenav-light">
-                    <div class="sidenav-menu">
-                        <div class="nav accordion" id="accordionSidenav">
-                            <!-- Sidenav Menu Heading (Account)-->
-                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                            <div class="sidenav-menu-heading d-sm-none">Account</div>
-                            <!-- Sidenav Link (Alerts)-->
-                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                            <a class="nav-link d-sm-none" href="#!">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                    </svg>
-                                </div>
-                                Alerts
-                                <span class="badge badge-warning-soft text-warning ml-auto">4 New!</span>
-                            </a>
-                            <!-- Sidenav Link (Messages)-->
-                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                            <a class="nav-link d-sm-none" href="#!">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                </div>
-                                Messages
-                                <span class="badge badge-success-soft text-success ml-auto">2 New!</span>
-                            </a>
-                            <!-- Sidenav Menu Heading (Core)-->
-                            <div class="sidenav-menu-heading">
-                                <font style="vertical-align: inherit;">
+                <h:form>
+                    <nav class="sidenav shadow-right sidenav-light">
+                        <div class="sidenav-menu">
+                            <div class="nav accordion" id="accordionSidenav">
+
+                                <!-- Sidenav Menu Heading (Account)-->
+                                <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                                <div class="sidenav-menu-heading d-sm-none">Account</div>
+                                <!-- Sidenav Link (Alerts)-->
+                                <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                                <a class="nav-link d-sm-none" href="#!">
+                                    <div class="nav-link-icon">
+                                        <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                        </svg>
+                                    </div>
+                                    Alerts
+                                    <span class="badge badge-warning-soft text-warning ml-auto">4 New!</span>
+                                </a>
+                                <!-- Sidenav Link (Messages)-->
+                                <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                                <a class="nav-link d-sm-none" href="#!">
+                                    <div class="nav-link-icon">
+                                        <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                    </div>
+                                    Messages
+                                    <span class="badge badge-success-soft text-success ml-auto">2 New!</span>
+                                </a>
+                                <!-- Sidenav Menu Heading (Core)-->
+                                <div class="sidenav-menu-heading">
                                     <font style="vertical-align: inherit;">
-                                        Mis favoritos
-                                    </font>
-                                </font>
-                            </div>
-                            <!-- Sidenav Accordion (Dashboard)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                        Mis información
-                                    </font></font>
-                                <div class="sidenav-collapse-arrow">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">
-                                        <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                    </svg>
-                                    <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
-                                </div>
-                            </a>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                        Mis cursos
-                                    </font></font>
-                                <div class="sidenav-collapse-arrow">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">
-                                        <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                    </svg>
-                                    <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
-                                </div>
-                            </a>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                        Todos los cursos
-                                    </font></font>
-                                <div class="sidenav-collapse-arrow">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">
-                                        <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                    </svg>
-                                    <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
-                                </div>
-                            </a>
-                            
-                            
-                            <div class="collapse" id="collapseDashboards" data-parent="#accordionSidenav" style="">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link active" href="index.html">
                                         <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">
-                                                Defecto
-                                            </font></font><span class="badge badge-primary-soft text-primary ml-auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Actualizado</font></font></span>
-                                    </a>
-                                    <a class="nav-link" href="dashboard-2.html"><font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">De múltiples fines</font></font></a>
-                                    <a class="nav-link" href="dashboard-3.html">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Afiliado</font>
+                                            Mis favoritos
                                         </font>
-                                    </a>
-                                </nav>
+                                    </font>
+                                </div>
+                                <!-- Sidenav Accordion (Dashboard)-->
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                    <div class="nav-link-icon">
+                                        <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                            Mis información
+                                        </font></font>
+                                    <div class="sidenav-collapse-arrow">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">
+                                            <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
+                                        </svg>
+                                        <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+                                    </div>
+                                </a>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                    <div class="nav-link-icon">
+                                        <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                            Mis cursos
+                                        </font></font>
+                                    <div class="sidenav-collapse-arrow">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">
+                                            <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
+                                        </svg>
+                                        <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+                                    </div>
+                                </a>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                    <div class="nav-link-icon">
+                                        <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                            Todos los cursos
+                                        </font></font>
+                                    <div class="sidenav-collapse-arrow">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">
+                                            <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
+                                        </svg>
+                                        <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+                                    </div>
+                                </a>
+
+
+                                <div class="collapse" id="collapseDashboards" data-parent="#accordionSidenav" style="">
+                                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                        <a class="nav-link active" href="index.html">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">
+                                                    Defecto
+                                                </font></font><span class="badge badge-primary-soft text-primary ml-auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Actualizado</font></font></span>
+                                        </a>
+                                        <a class="nav-link" href="dashboard-2.html"><font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">De múltiples fines</font></font></a>
+                                        <a class="nav-link" href="dashboard-3.html">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Afiliado</font>
+                                            </font>
+                                        </a>
+                                    </nav>
+                                </div>
+                                <!-- Sidenav Heading (App Views)-->
+                                <div class="sidenav-menu-heading">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Configuración de aplicación
+                                        </font>
+                                    </font>
+                                </div>
+                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/usuario/consultar.xhtml" aria-expanded="false">
+                                    <div class="nav-link-icon">
+                                        <span class="fa fa-user"></span>
+                                    </div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Usuario
+                                        </font>
+                                    </font>
+                                </a>
+                                <!-- Sidenav Accordion (Pages)-->
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                    <div class="nav-link-icon">
+                                        <span class="fa fa-users"></span>
+                                    </div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Roles
+                                        </font>
+                                    </font>
+                                </a>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                    <div class="nav-link-icon">
+                                        <span class="fa fa-graduation-cap"></span>
+                                    </div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Facultad
+                                        </font>
+                                    </font>
+                                </a>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                    <div class="nav-link-icon">
+                                        <span class="fa fa-object-group"></span>
+                                    </div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Departamento
+                                        </font>
+                                    </font>
+                                </a>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                    <div class="nav-link-icon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Periodo
+                                        </font>
+                                    </font>
+                                </a>
+                                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                    <div class="nav-link-icon">
+                                        <span class="fa fa-book"></span>
+                                    </div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Curso
+                                        </font>
+                                    </font>
+                                </a>
+
+
                             </div>
-                            <!-- Sidenav Heading (App Views)-->
-                            <div class="sidenav-menu-heading">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Configuración de aplicación
-                                    </font>
-                                </font>
+                        </div>
+                        <!-- Sidenav Footer-->
+                        <div class="sidenav-footer">
+                            <div class="sidenav-footer-content">
+                                <div class="sidenav-footer-subtitle"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conectado como:</font></font></div>
+                                <div class="sidenav-footer-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Valerie Luna</font></font></div>
                             </div>
-                            <!-- Sidenav Accordion (Pages)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        Roles
-                                    </font>
-                                </font>
-                            </a>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        Facultad
-                                    </font>
-                                </font>
-                            </a>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        Departamento
-                                    </font>
-                                </font>
-                            </a>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        Periodo
-                                    </font>
-                                </font>
-                            </a>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
-                                </div>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        Curso
-                                    </font>
-                                </font>
-                            </a>
-                            
-                            
                         </div>
-                    </div>
-                    <!-- Sidenav Footer-->
-                    <div class="sidenav-footer">
-                        <div class="sidenav-footer-content">
-                            <div class="sidenav-footer-subtitle"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conectado como:</font></font></div>
-                            <div class="sidenav-footer-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Valerie Luna</font></font></div>
-                        </div>
-                    </div>
-                </nav>
+                    </nav>
+                </h:form>
             </div>
             <div id="layoutSidenav_content">
                 <main>

@@ -9,7 +9,7 @@ import co.edu.ucentral.models.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
@@ -19,7 +19,7 @@ import javax.persistence.Query;
 @Stateless
 public class UsuarioDAOImpl implements UsuarioDAO {
 
-    @PersistenceUnit(name = "AulaWeb")
+    @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override
@@ -50,7 +50,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     @Override
     public Usuario findByUserAndPassword(Usuario usuario) {
         Query query =em.createNamedQuery("Usuario.findByUsuarioAndPass", Usuario.class);
-        query.setParameter("usuario",usuario.getNombre());
+        query.setParameter("usuario",usuario.getUsuario());
         query.setParameter("clave",usuario.getClave());
         return (Usuario) query.getSingleResult();
     }
