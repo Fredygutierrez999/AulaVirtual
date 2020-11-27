@@ -56,6 +56,7 @@ public class Pregunta implements Serializable {
     private List<Respuesta> respuestaList;
 
     public Pregunta() {
+        this.idPregunta = 0;
     }
 
     public Pregunta(Integer idPregunta) {

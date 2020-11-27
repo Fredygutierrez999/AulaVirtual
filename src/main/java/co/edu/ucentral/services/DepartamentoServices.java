@@ -15,8 +15,8 @@ import javax.ejb.Local;
 @Local
 public interface DepartamentoServices {
     public List<Departamento> listadoDepartamento();
-    public Departamento clasePorId(Departamento departamento);
-    public void guardarCursosTomado(Departamento departamento);
-    public void modificarCursosTomado(Departamento departamento);
-    public void eliminarCursosTomado(Departamento departamento); 
+    public Departamento departamentoPorId(Departamento departamento);
+    public void guardarDepartamento(Departamento departamento);
+    public void modificarDepartamento(Departamento departamento);
+    public void eliminarDepartamento(Departamento departamento); 
 }

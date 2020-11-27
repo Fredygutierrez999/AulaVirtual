@@ -31,63 +31,59 @@
                     <!-- Main page content-->
                     <div class="container mt-n10">
                         <div class="row">
-                            <div class="col-xxl-12 col-xl-12 mb-4">
+                            <div class="col-xxl-12 col-xl-3 mb-3"></div>
+                            <div class="col-xxl-12 col-xl-6 mb-6">
                                 <div class="card h-100">
                                     <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
 
-                                        <h:form>  
-
+                                        <h:form> 
                                             <div class="row mb-1">
                                                 <div class="col-md-10">
                                                     <h3 class="">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <span class="fa fa-circle"></span>
-                                                                Consultar usuarios
+                                                                #{msgs['departamento.nombrefnc']} (#{departamentoBean.departamento.idDepartamento})
+                                                                <h:inputHidden id="idDepartamento" value="#{departamentoBean.departamento.idDepartamento}"></h:inputHidden>
                                                             </font>
                                                         </font>
 
                                                     </h3>
                                                 </div>
                                                 <div class="col-md-2 text-right">
-                                                    <h:commandButton action="#{usuarioBean.crear()}" value="Crear usuario" class="btn btn-sm btn-success" >
-                                                    </h:commandButton>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="nombre" class="control-label col-sm-4 text-left" value="#{msgs['gen.nombre']}"></h:outputLabel>
+                                                    <h:inputText  required="true" id="nombre"  value="#{departamentoBean.departamento.nombre}" class="form-control"></h:inputText>
+                                                    <h:message for="nombre" class="form-control alert alert-danger"></h:message>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="idFacultad" class="control-label col-sm-4" value="Rol"></h:outputLabel>
+                                                    <h:selectOneMenu id="idFacultad" value="#{departamentoBean.idFacultad}" required="true" class="form-control">
+                                                        <f:selectItem itemLabel="Seleccione....." itemValue="" noSelectionOption="true"/>
+                                                        <f:selectItems value="#{departamentoBean.facultades}" var="departamento" itemValue="#{departamento.idFacultad}" itemLabel="#{departamento.nombre}"/>
+                                                        <f:validateRequired/>
+                                                    </h:selectOneMenu>
+                                                    <h:message for="idFacultad" class="form-control alert alert-danger"></h:message>
                                                 </div>
                                             </div>
 
 
-                                            <h:dataTable value="#{usuarioBean.usuarios}" var="usuario" class="table table-hover">
-                                                <h:column class="col-id">
-                                                    <f:facet name="header">Id</f:facet>
-                                                    <h:outputText value="#{usuario.idUsuario}"></h:outputText>
-                                                </h:column>
-                                                <h:column class="col-id">
-                                                    <f:facet name="header">Id</f:facet>
-                                                    <h:graphicImage url="#{usuario.fotoPerfil}" class="img-mini rounded" ></h:graphicImage>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Usuario</f:facet>
-                                                    <h:outputText value="#{usuario.usuario}"></h:outputText>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Clave</f:facet>
-                                                    <h:outputText value="#{usuario.clave}"></h:outputText>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Nombre</f:facet>
-                                                    <h:outputText value="#{usuario.nombre}"></h:outputText>
-                                                </h:column>
-                                                <h:column class="col-editar">
-                                                    <f:facet name="header">Editar</f:facet>
-                                                    <h:commandButton action="#{usuarioBean.editar(usuario.idUsuario)}" value="Editar" class="btn btn-secondary btn-sm"></h:commandButton>
-                                                </h:column>
-                                                <h:column class="col-remover">
-                                                    <f:facet name="header">Eliminar</f:facet>
-                                                    <h:commandButton action="#{usuarioBean.eliminar(usuario.idUsuario)}" value="Eliminar" class="btn btn-danger btn-sm"></h:commandButton>
-                                                </h:column>
-                                            </h:dataTable>
+                                            <div class="row mb-1">
+                                                <div class="col-md-10">
+                                                </div>
+                                                <div class="col-md-2 text-right">
+                                                    <h:commandButton action="#{departamentoBean.guardar()}" value="#{msgs['btn.guardar']}" class="btn btn-sm btn-success" >
+                                                    </h:commandButton>
+                                                </div>
+                                            </div>
                                         </h:form>
-
 
                                     </div>
                                 </div>

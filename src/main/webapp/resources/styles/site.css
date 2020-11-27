@@ -1,0 +1,18 @@
+.col-id{
+    width: 30px;
+    max-width: 30px;
+}
+
+.col-editar{
+    width: 50px;
+    max-width: 50px;
+}
+
+.col-remover{
+    width: 50px;
+    max-width: 50px;
+}
+
+.img-mini{
+    width: 20px;
+}

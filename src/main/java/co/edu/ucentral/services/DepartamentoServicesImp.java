@@ -27,23 +27,23 @@ public class DepartamentoServicesImp implements DepartamentoServices {
     }
 
     @Override
-    public Departamento clasePorId(Departamento departamento) {
+    public Departamento departamentoPorId(Departamento departamento) {
         return dpDAO.findByDepartamento(departamento);
 
     }
 
     @Override
-    public void guardarCursosTomado(Departamento departamento) {
+    public void guardarDepartamento(Departamento departamento) {
         dpDAO.insertDepartamento(departamento);
     }
 
     @Override
-    public void modificarCursosTomado(Departamento departamento) {
+    public void modificarDepartamento(Departamento departamento) {
         dpDAO.updateDepartamento(departamento);
     }
 
     @Override
-    public void eliminarCursosTomado(Departamento departamento) {
+    public void eliminarDepartamento(Departamento departamento) {
         dpDAO.deleteDepartamento(departamento);
     }
 

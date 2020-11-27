@@ -54,6 +54,7 @@ public class Evaluacion implements Serializable {
     private Curso idCurso;
 
     public Evaluacion() {
+        this.idEvaluacion = 0;
     }
 
     public Evaluacion(Integer idEvaluacion) {
@@ -130,5 +131,5 @@ public class Evaluacion implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Evaluacion[ idEvaluacion=" + idEvaluacion + " ]";
     }
-    
+
 }

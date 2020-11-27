@@ -35,59 +35,45 @@
                                 <div class="card h-100">
                                     <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
 
-                                        <h:form>  
-
+                                        <h:form> 
                                             <div class="row mb-1">
                                                 <div class="col-md-10">
                                                     <h3 class="">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
                                                                 <span class="fa fa-circle"></span>
-                                                                Consultar usuarios
+                                                                #{msgs['rol.tituloconsulta']}
                                                             </font>
                                                         </font>
 
                                                     </h3>
                                                 </div>
                                                 <div class="col-md-2 text-right">
-                                                    <h:commandButton action="#{usuarioBean.crear()}" value="Crear usuario" class="btn btn-sm btn-success" >
+                                                    <h:commandButton action="#{rolBean.crear()}" value="#{msgs['rol.crear']}" class="btn btn-sm btn-success" >
                                                     </h:commandButton>
                                                 </div>
                                             </div>
 
 
-                                            <h:dataTable value="#{usuarioBean.usuarios}" var="usuario" class="table table-hover">
+                                            <h:dataTable value="#{rolBean.roles}" var="rol" class="table w-100 table-hover">
                                                 <h:column class="col-id">
-                                                    <f:facet name="header">Id</f:facet>
-                                                    <h:outputText value="#{usuario.idUsuario}"></h:outputText>
-                                                </h:column>
-                                                <h:column class="col-id">
-                                                    <f:facet name="header">Id</f:facet>
-                                                    <h:graphicImage url="#{usuario.fotoPerfil}" class="img-mini rounded" ></h:graphicImage>
+                                                    <f:facet name="header">#{msgs['rol.id']}</f:facet>
+                                                    <h:outputText value="#{rol.idRol}"></h:outputText>
                                                 </h:column>
                                                 <h:column>
-                                                    <f:facet name="header">Usuario</f:facet>
-                                                    <h:outputText value="#{usuario.usuario}"></h:outputText>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Clave</f:facet>
-                                                    <h:outputText value="#{usuario.clave}"></h:outputText>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Nombre</f:facet>
-                                                    <h:outputText value="#{usuario.nombre}"></h:outputText>
+                                                    <f:facet name="header">#{msgs['rol.nombrerol']}</f:facet>
+                                                    <h:outputText value="#{rol.nombre}"></h:outputText>
                                                 </h:column>
                                                 <h:column class="col-editar">
-                                                    <f:facet name="header">Editar</f:facet>
-                                                    <h:commandButton action="#{usuarioBean.editar(usuario.idUsuario)}" value="Editar" class="btn btn-secondary btn-sm"></h:commandButton>
+                                                    <f:facet name="header">#{msgs['btn.editar']}</f:facet>
+                                                    <h:commandButton action="#{rolBean.editar(rol.idRol)}" value="#{msgs['btn.editar']}" class="btn btn-secondary btn-sm"></h:commandButton>
                                                 </h:column>
                                                 <h:column class="col-remover">
-                                                    <f:facet name="header">Eliminar</f:facet>
-                                                    <h:commandButton action="#{usuarioBean.eliminar(usuario.idUsuario)}" value="Eliminar" class="btn btn-danger btn-sm"></h:commandButton>
+                                                    <f:facet name="header">#{msgs['btn.eliminar']}</f:facet>
+                                                    <h:commandButton action="#{rolBean.eliminar(rol.idRol)}" value="#{msgs['btn.eliminar']}" class="btn btn-danger btn-sm"></h:commandButton>
                                                 </h:column>
                                             </h:dataTable>
                                         </h:form>
-
 
                                     </div>
                                 </div>

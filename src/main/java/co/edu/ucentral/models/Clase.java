@@ -57,6 +57,7 @@ public class Clase implements Serializable {
     private Curso idCurso;
 
     public Clase() {
+        this.idClase = 0;
     }
 
     public Clase(Integer idClase) {
@@ -134,5 +135,5 @@ public class Clase implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Clase[ idClase=" + idClase + " ]";
     }
-    
+
 }
