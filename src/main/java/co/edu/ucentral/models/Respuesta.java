@@ -54,6 +54,7 @@ public class Respuesta implements Serializable {
     private Pregunta idPregunta;
 
     public Respuesta() {
+        this.idRespuesta = 0;
     }
 
     public Respuesta(Integer idRespuesta) {
@@ -130,5 +131,5 @@ public class Respuesta implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Respuesta[ idRespuesta=" + idRespuesta + " ]";
     }
-    
+
 }

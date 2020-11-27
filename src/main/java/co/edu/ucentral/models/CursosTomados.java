@@ -58,6 +58,7 @@ public class CursosTomados implements Serializable {
     private List<ResultadoRespuesta> resultadoRespuestaList;
 
     public CursosTomados() {
+        this.idCursosTomados = 0;
     }
 
     public CursosTomados(Integer idCursosTomados) {

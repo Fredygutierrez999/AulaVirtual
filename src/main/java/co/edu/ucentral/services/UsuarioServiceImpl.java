@@ -27,7 +27,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     }
 
     @Override
-    public Usuario rolPorId(Usuario usuario) {
+    public Usuario usuarioPorId(Usuario usuario) {
         return usuarioDAO.findByUser(usuario);
     }
 

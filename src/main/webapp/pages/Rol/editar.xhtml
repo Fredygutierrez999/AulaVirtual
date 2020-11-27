@@ -42,8 +42,8 @@
                                                     <h3 class="">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                Usuario (#{usuarioBean.usuario.idUsuario})
-                                                                <h:inputHidden id="idUsuario" value="#{usuarioBean.usuario.idUsuario}"></h:inputHidden>
+                                                                #{msgs['rol.nombrefnc']} (#{rolBean.rol.idRol})
+                                                                <h:inputHidden id="idRol" value="#{rolBean.rol.idRol}"></h:inputHidden>
                                                             </font>
                                                         </font>
 
@@ -56,52 +56,18 @@
 
                                             <div class="row mb-1">
                                                 <div class="col-md-12 form-group">
-                                                    <h:outputLabel for="nombre" class="control-label col-sm-4 text-left" value="Nombre:"></h:outputLabel>
-                                                    <h:inputText  required="true" id="nombre"  value="#{usuarioBean.usuario.nombre}" class="form-control"></h:inputText>
+                                                    <h:outputLabel for="nombre" class="control-label col-sm-4 text-right" value="#{msgs['gen.nombre']}"></h:outputLabel>
+                                                    <h:inputText  required="true" id="nombre"  value="#{rolBean.rol.nombre}" class="form-control"></h:inputText>
                                                     <h:message for="nombre" class="form-control alert alert-danger"></h:message>
                                                 </div>
                                             </div>
-                                            <hr></hr>
-                                            <div class="row mb-1">
-                                                <div class="col-md-12 form-group">
-                                                    <h:outputLabel for="usuario" class="control-label col-sm-4 text-left" value="Usuario:"></h:outputLabel>
-                                                    <h:inputText  required="true" id="usuario" value="#{usuarioBean.usuario.usuario}" class="form-control"></h:inputText>
-                                                    <h:message for="usuario" class="form-control alert alert-danger"></h:message>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-1">
-                                                <div class="col-md-12 form-group">
-                                                    <h:outputLabel for="clave" class="control-label col-sm-4 text-left" value="Clave"></h:outputLabel>
-                                                    <h:inputSecret  required="true" id="clave" value="#{usuarioBean.usuario.clave}" class="form-control"></h:inputSecret>
-                                                    <h:message for="clave" class="form-control alert alert-danger"></h:message>
-                                                </div>
-                                            </div>
 
-                                            <div class="row mb-1">
-                                                <div class="col-md-12 form-group">
-                                                    <h:outputLabel for="idRol" class="control-label col-sm-4" value="Rol"></h:outputLabel>
-                                                    <h:selectOneMenu id="idRol" value="#{usuarioBean.idRol}" required="true" class="form-control">
-                                                        <f:selectItem itemLabel="Seleccione....." itemValue="" noSelectionOption="true"/>
-                                                        <f:selectItems value="#{usuarioBean.roles}" var="rol" itemValue="#{rol.idRol}" itemLabel="#{rol.nombre}"/>
-                                                        <f:validateRequired/>
-                                                    </h:selectOneMenu>
-                                                    <h:message for="idRol" class="form-control alert alert-danger"></h:message>
-                                                </div>
-                                            </div>
-
-                                            <div class="row mb-1">
-                                                <div class="col-md-12 form-group">
-                                                    <h:outputLabel for="fotoPerfil" class="control-label col-sm-4 text-left" value="Foto"></h:outputLabel>
-                                                    <h:inputText  required="true" id="fotoPerfil"  value="#{usuarioBean.usuario.fotoPerfil}" class="form-control"></h:inputText>
-                                                    <h:message for="fotoPerfil" class="form-control alert alert-danger"></h:message>
-                                                </div>
-                                            </div>
 
                                             <div class="row mb-1">
                                                 <div class="col-md-8">
                                                 </div>
                                                 <div class="col-md-2 text-right">
-                                                    <h:commandButton action="#{usuarioBean.guardar()}" class="btn btn-sm btn-success" value="Guardar" id="btn" >
+                                                    <h:commandButton action="#{rolBean.guardar()}" value="#{msgs['btn.guardar']}" class="btn btn-sm btn-success" >
                                                     </h:commandButton>
                                                 </div>
                                             </div>
@@ -119,3 +85,4 @@
         </ui:composition>
     </h:body>
 </html>
+

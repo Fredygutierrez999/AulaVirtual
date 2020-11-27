@@ -21,21 +21,124 @@
             <to-view-id>/login.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+    
     <navigation-rule id="3">
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-outcome>usuarioconsultar</from-outcome>
+            <from-outcome>usuarioConsultar</from-outcome>
             <to-view-id>/pages/usuario/consultar.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <navigation-rule id="3">
+    <navigation-rule id="4">
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-outcome>usuarioeditar</from-outcome>
+            <from-outcome>usuarioEditar</from-outcome>
+            <to-view-id>/pages/usuario/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="5">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>usuarioCrear</from-outcome>
             <to-view-id>/pages/usuario/editar.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
+    
+    
+    <navigation-rule id="6">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>rolConsultar</from-outcome>
+            <to-view-id>/pages/Rol/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="7">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>rolEditar</from-outcome>
+            <to-view-id>/pages/Rol/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="8">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>rolCrear</from-outcome>
+            <to-view-id>/pages/Rol/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule id="9">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>facultadConsultar</from-outcome>
+            <to-view-id>/pages/Facultad/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="10">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>facultadEditar</from-outcome>
+            <to-view-id>/pages/Facultad/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="11">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>facultadCrear</from-outcome>
+            <to-view-id>/pages/Facultad/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule id="12">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>departamentoConsultar</from-outcome>
+            <to-view-id>/pages/Departamento/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="13">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>departamentoEditar</from-outcome>
+            <to-view-id>/pages/Departamento/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="14">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>departamentoCrear</from-outcome>
+            <to-view-id>/pages/Departamento/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule id="15">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>periodoConsultar</from-outcome>
+            <to-view-id>/pages/Departamento/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="16">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>periodoEditar</from-outcome>
+            <to-view-id>/pages/Periodo/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="17">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>periodoCrear</from-outcome>
+            <to-view-id>/pages/Periodo/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     
     
     <application>

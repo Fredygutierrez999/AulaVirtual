@@ -50,6 +50,7 @@ public class Departamento implements Serializable {
     private Facultad idFacultad;
 
     public Departamento() {
+        this.idDepartamento = 0;
     }
 
     public Departamento(Integer idDepartamento) {
@@ -117,5 +118,5 @@ public class Departamento implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Departamento[ idDepartamento=" + idDepartamento + " ]";
     }
-    
+
 }

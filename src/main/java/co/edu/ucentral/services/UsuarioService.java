@@ -16,7 +16,7 @@ import javax.ejb.Local;
 @Local
 public interface UsuarioService {
     public List<Usuario> listadoUsuario();
-    public Usuario rolPorId(Usuario usuario);
+    public Usuario usuarioPorId(Usuario usuario);
     public void guardarUsuario(Usuario usuario);
     public void modificarUsuario(Usuario usuario);
     public void eliminarUsuario(Usuario usuario);

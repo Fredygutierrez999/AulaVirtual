@@ -45,6 +45,7 @@ public class Rol implements Serializable {
     private List<Usuario> usuarioList;
 
     public Rol() {
+        this.idRol = 0;
     }
 
     public Rol(Integer idRol) {

@@ -49,11 +49,11 @@ public class Periodo implements Serializable {
     private String nombre;
     @Basic(optional = false)
     @Column(name = "Fechainicial")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date fechainicial;
     @Basic(optional = false)
     @Column(name = "Fechafinal")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date fechafinal;
     @Basic(optional = false)
     @Column(name = "Activo")
@@ -62,6 +62,7 @@ public class Periodo implements Serializable {
     private List<CursosTomados> cursosTomadosList;
 
     public Periodo() {
+        this.idPeriodo=0;
     }
 
     public Periodo(Integer idPeriodo) {
@@ -114,14 +115,6 @@ public class Periodo implements Serializable {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
-    }
-
-    public List<CursosTomados> getCursosTomadosList() {
-        return cursosTomadosList;
-    }
-
-    public void setCursosTomadosList(List<CursosTomados> cursosTomadosList) {
-        this.cursosTomadosList = cursosTomadosList;
     }
 
     @Override

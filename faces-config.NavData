@@ -1,25 +1,6 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
-    <Scope Scope="Project">
-        <Node id="login.xhtml" x="650" y="150" zoom="true"/>
-        <Node id="*" x="400" y="150" zoom="true"/>
-        <Node id="index.xhtml" x="150" y="150" zoom="true"/>
-    </Scope>
+    <Scope Scope="Project"/>
     <Scope Scope="All Faces Configurations"/>
 </Scene>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<Scene Scope="Project" version="2">
-    <Scope Scope="Faces Configuration Only"/>
-    <Scope Scope="Project">
-        <Node id="pages/usuario/consultaUsuarios.xhtml" x="150" y="300" zoom="true"/>
-        <Node id="login.xhtml" x="650" y="150" zoom="true"/>
-        <Node id="pages/usuario/editaUsuario.xhtml" x="400" y="300" zoom="true"/>
-        <Node id="*" x="400" y="150" zoom="true"/>
-        <Node id="index.xhtml" x="150" y="150" zoom="true"/>
-    </Scope>
-    <Scope Scope="All Faces Configurations"/>
-</Scene>
->>>>>>> origin/main

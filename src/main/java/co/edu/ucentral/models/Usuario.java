@@ -69,6 +69,7 @@ public class Usuario implements Serializable {
     private List<Curso> cursoList;
 
     public Usuario() {
+        this.idUsuario = 0;
     }
 
     public Usuario(Integer idUsuario) {

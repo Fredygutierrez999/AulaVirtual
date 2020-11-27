@@ -5,6 +5,7 @@
  */
 package co.edu.ucentral.controller;
 
+import co.edu.ucentral.models.Rol;
 import java.util.List;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
@@ -12,27 +13,35 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import co.edu.ucentral.models.Usuario;
+import co.edu.ucentral.services.RolService;
 import co.edu.ucentral.services.UsuarioService;
+import java.io.Serializable;
 
 @Named("usuarioBean")
 @RequestScoped
-public class UsuarioBean {
+public class UsuarioBean implements Serializable {
 
     @Inject
     private UsuarioService usuarioService;
+    @Inject
+    private RolService rolService;
+    
     private Usuario usuario;
     private List<Usuario> usuarios;
-    private String mensaje;
+    private List<Rol> roles;
+    private String funcionalidad;
+    private int idRol;
 
     @PostConstruct
     public void inicializar() {
-
-        usuarios = usuarioService.listadoUsuario();
-        usuario = new Usuario();
+        this.roles =  this.rolService.listadoRol();
+        this.usuarios = usuarioService.listadoUsuario();
     }
 
     public UsuarioBean() {
-        this.usuario = new Usuario();
+        usuarios = new ArrayList<>();
+        usuario = new Usuario();
+        this.funcionalidad = "usuario";
     }
 
     public String validarUsuario() {
@@ -41,7 +50,6 @@ public class UsuarioBean {
             return "index";
         } else {
             if (tmp == null) {
-                this.mensaje = "Datos incorrectos.";
                 return "login";
             }
         }
@@ -49,21 +57,40 @@ public class UsuarioBean {
     }
 
     public String consultarUsuario() {
-        usuarios = usuarioService.listadoUsuario();
-        return "usuarioconsultar";
+        this.usuarios = usuarioService.listadoUsuario();
+        return this.funcionalidad + "consultar";
 
     }
 
     public String editar(int id) {
-        return "usuarioeditar";
+        this.usuario = this.usuarioService.usuarioPorId(new Usuario(id));
+        this.idRol = this.usuario.getRol().getIdRol();
+        return this.funcionalidad + "Editar";
     }
 
-    public String eliminar(Usuario usuario) {
-        usuarioService.eliminarUsuario(usuario);
-        usuarios = usuarioService.listadoUsuario();
-        return "usuarioconsultar";
+    public String guardar() {
+        this.usuario.setRol(new Rol(this.idRol));
+        if (this.usuario.getIdUsuario()== 0) {
+            this.usuarioService.guardarUsuario(this.usuario);
+        }else{
+            this.usuarioService.modificarUsuario(this.usuario);
+        }
+        this.usuarios = usuarioService.listadoUsuario();
+        return this.funcionalidad + "Consultar";
+    }
+    
+    public String eliminar(int idUsuario) {
+        this.usuarioService.eliminarUsuario(new Usuario(idUsuario));
+        this.usuarios = usuarioService.listadoUsuario();
+        return this.funcionalidad +  "Consultar";
+    }
+    
+    public String crear() {
+        this.usuario = new Usuario();
+        return this.funcionalidad + "Crear";
     }
 
+    
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -80,12 +107,23 @@ public class UsuarioBean {
         this.usuario = usuario;
     }
 
-    public String getMensaje() {
-        return mensaje;
+    public int getIdRol() {
+        return idRol;
     }
 
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
+    public void setIdRol(int idRol) {
+        this.idRol = idRol;
     }
 
+    public List<Rol> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Rol> roles) {
+        this.roles = roles;
+    }
+
+    
+    
+    
 }
