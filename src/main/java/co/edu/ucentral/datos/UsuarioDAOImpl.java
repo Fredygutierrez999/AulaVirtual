@@ -50,6 +50,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     @Override
     public Usuario findByUserAndPassword(Usuario usuario) {
         Query query =em.createNamedQuery("Usuario.findByUsuarioAndPass", Usuario.class);
+        System.out.println("usuario.getUsuario() = " + usuario.getUsuario());
+        System.out.println("usuario.getUsuario()"+usuario.getClave());
         query.setParameter("usuario",usuario.getUsuario());
         query.setParameter("clave",usuario.getClave());
         try {
