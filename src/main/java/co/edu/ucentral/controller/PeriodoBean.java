@@ -34,6 +34,7 @@ public class PeriodoBean {
 
     public PeriodoBean() {
         this.periodos = this.periodoService.listadoPeriodo();
+        
         this.periodo = new Periodo();
         this.funcionalidad = "periodo";
     }

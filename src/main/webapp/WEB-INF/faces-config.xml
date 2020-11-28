@@ -11,14 +11,14 @@
         <from-view-id>*</from-view-id>
         <navigation-case>
             <from-outcome>index</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule id="2">
         <from-view-id>*</from-view-id>
         <navigation-case>
             <from-outcome>login</from-outcome>
-            <to-view-id>/login.xhtml</to-view-id>
+            <to-view-id>login.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
