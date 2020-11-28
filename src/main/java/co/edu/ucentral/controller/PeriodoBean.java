@@ -55,5 +55,9 @@ public class PeriodoBean {
         this.funcionalidad = funcionalidad;
     }
     
-
+    public String crear(){
+       return  "editar";
+    }
+        
+    
 }
