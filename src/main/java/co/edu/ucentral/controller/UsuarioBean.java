@@ -9,7 +9,6 @@ import co.edu.ucentral.models.Rol;
 import java.util.List;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import co.edu.ucentral.models.Usuario;
@@ -17,9 +16,14 @@ import co.edu.ucentral.services.RolService;
 import co.edu.ucentral.services.UsuarioService;
 
 import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 
 @Named("usuarioBean")
-@RequestScoped
+@SessionScoped
 public class UsuarioBean implements Serializable {
 
     @Inject
@@ -49,10 +53,15 @@ public class UsuarioBean implements Serializable {
         Usuario tmp = new Usuario();
         tmp = this.usuarioService.usuarioPorClave(usuario);
         if (tmp != null) {
-            
+            usuario =tmp;
             return "index";
         } else {
             if (tmp == null) {
+                String msg = "Usuario o contraseña invalidos";
+                FacesMessage facesMessage=new FacesMessage(FacesMessage.SEVERITY_ERROR,msg,msg);
+                FacesContext facesContext= FacesContext.getCurrentInstance();
+                String componentId= null;
+                facesContext.addMessage(componentId, facesMessage);
                 return "login";
             }
         }
