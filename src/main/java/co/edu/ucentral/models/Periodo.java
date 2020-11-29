@@ -30,7 +30,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "Periodo")
 @NamedQueries({
-    @NamedQuery(name =  "Periodo.findAll", query = "SELECT p FROM Periodo p"),
+    @NamedQuery(name = "Periodo.findAll", query = "SELECT p FROM Periodo p"),
     @NamedQuery(name = "Periodo.findByIdPeriodo", query = "SELECT p FROM Periodo p WHERE p.idPeriodo = :idPeriodo"),
     @NamedQuery(name = "Periodo.findByNombre", query = "SELECT p FROM Periodo p WHERE p.nombre = :nombre"),
     @NamedQuery(name = "Periodo.findByFechainicial", query = "SELECT p FROM Periodo p WHERE p.fechainicial = :fechainicial"),
@@ -62,7 +62,7 @@ public class Periodo implements Serializable {
     private List<CursosTomados> cursosTomadosList;
 
     public Periodo() {
-        this.idPeriodo=0;
+        this.idPeriodo = 0;
     }
 
     public Periodo(Integer idPeriodo) {
@@ -141,5 +141,5 @@ public class Periodo implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Periodo[ idPeriodo=" + idPeriodo + " ]";
     }
-    
+
 }

@@ -8,15 +8,21 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.models.Departamento;
 import java.util.List;
 import javax.ejb.Local;
+
 /**
  *
  * @author Adolfo
  */
 @Local
 public interface DepartamentoServices {
+
     public List<Departamento> listadoDepartamento();
+
     public Departamento departamentoPorId(Departamento departamento);
+
     public void guardarDepartamento(Departamento departamento);
+
     public void modificarDepartamento(Departamento departamento);
-    public void eliminarDepartamento(Departamento departamento); 
+
+    public void eliminarDepartamento(Departamento departamento);
 }

@@ -16,11 +16,11 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class ResultadoRespuestaServiceImp implements ResultadoRespuestaService{
+public class ResultadoRespuestaServiceImp implements ResultadoRespuestaService {
 
     @Inject
     private ResultadoRespuestaDAO resultadoRespuestaDAO;
-    
+
     @Override
     public List<ResultadoRespuesta> listadoResultadoRespuesta() {
         return resultadoRespuestaDAO.listResultado();
@@ -45,5 +45,5 @@ public class ResultadoRespuestaServiceImp implements ResultadoRespuestaService{
     public void eliminarResultadoRespues(ResultadoRespuesta resultadoRespuesta) {
         resultadoRespuestaDAO.deleteResultadoRespuesta(resultadoRespuesta);
     }
-    
+
 }

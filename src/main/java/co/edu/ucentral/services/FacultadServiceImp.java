@@ -20,6 +20,7 @@ public class FacultadServiceImp implements FacultadService {
 
     @Inject
     private FacultadDAO facultadDAO;
+
     @Override
     public List<Facultad> listadoFacultad() {
         return facultadDAO.listFacultad();
@@ -44,5 +45,5 @@ public class FacultadServiceImp implements FacultadService {
     public void eliminarFacultad(Facultad facultad) {
         facultadDAO.deleteFacultad(facultad);
     }
- 
+
 }

@@ -14,14 +14,14 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 
 @Stateless
-public class CursosTomadosDAOImp implements CursosTomadosDAO{
-    
+public class CursosTomadosDAOImp implements CursosTomadosDAO {
+
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override
     public List<CursosTomados> listCursosTomados() {
-       return  em.createNamedQuery("CursosTomados.findAll", CursosTomados.class).getResultList();
+        return em.createNamedQuery("CursosTomados.findAll", CursosTomados.class).getResultList();
     }
 
     @Override

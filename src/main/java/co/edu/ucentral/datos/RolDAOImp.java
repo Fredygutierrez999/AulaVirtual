@@ -19,12 +19,12 @@ public class RolDAOImp implements RolDAO {
 
     @Override
     public List<Rol> listadoRoles() {
-        return  em.createNamedQuery("Rol.findAll", Rol.class).getResultList();
+        return em.createNamedQuery("Rol.findAll", Rol.class).getResultList();
     }
 
     @Override
     public Rol findByIdRol(Rol rol) {
-        return  em.find(Rol.class, rol.getIdRol());
+        return em.find(Rol.class, rol.getIdRol());
     }
 
     @Override
@@ -34,7 +34,7 @@ public class RolDAOImp implements RolDAO {
 
     @Override
     public void updateRol(Rol rol) {
-      em.merge(rol);
+        em.merge(rol);
     }
 
     @Override

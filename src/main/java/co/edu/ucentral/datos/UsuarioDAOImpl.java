@@ -29,7 +29,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
     @Override
     public Usuario findByUser(Usuario usuario) {
-       return em.find(Usuario.class, usuario.getIdUsuario());
+        return em.find(Usuario.class, usuario.getIdUsuario());
     }
 
     @Override
@@ -44,23 +44,23 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
     @Override
     public void deleteUser(Usuario usuario) {
-     em.remove(em.merge(usuario));
+        em.remove(em.merge(usuario));
     }
 
     @Override
     public Usuario findByUserAndPassword(Usuario usuario) {
-        Query query =em.createNamedQuery("Usuario.findByUsuarioAndPass", Usuario.class);
+        Query query = em.createNamedQuery("Usuario.findByUsuarioAndPass", Usuario.class);
         System.out.println("usuario.getUsuario() = " + usuario.getUsuario());
-        System.out.println("usuario.getUsuario()"+usuario.getClave());
-        query.setParameter("usuario",usuario.getUsuario());
-        query.setParameter("clave",usuario.getClave());
+        System.out.println("usuario.getUsuario()" + usuario.getClave());
+        query.setParameter("usuario", usuario.getUsuario());
+        query.setParameter("clave", usuario.getClave());
         try {
             return (Usuario) query.getSingleResult();
         } catch (Exception e) {
-            System.err.println("Error al autenticarse"+ e.getMessage());
-            return  null;
+            System.err.println("Error al autenticarse" + e.getMessage());
+            return null;
         }
-        
+
     }
 
 }

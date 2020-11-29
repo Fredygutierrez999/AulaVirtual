@@ -22,15 +22,14 @@ public class FacultadBean implements Serializable {
 
     @Inject
     private FacultadService facultadService;
-  
-    
+
     private Facultad facultad;
     private List<Facultad> facultades;
     private String funcionalidad;
 
     @PostConstruct
     public void inicializar() {
-        this.facultades =  this.facultadService.listadoFacultad();
+        this.facultades = this.facultadService.listadoFacultad();
     }
 
     public FacultadBean() {
@@ -45,21 +44,21 @@ public class FacultadBean implements Serializable {
     }
 
     public String guardar() {
-        if (this.facultad.getIdFacultad()== 0) {
+        if (this.facultad.getIdFacultad() == 0) {
             this.facultadService.guardarFacultad(this.facultad);
-        }else{
+        } else {
             this.facultadService.modificarFacultad(this.facultad);
         }
         this.facultades = facultadService.listadoFacultad();
         return this.funcionalidad + "Consultar";
     }
-    
+
     public String eliminar(int id) {
         this.facultadService.eliminarFacultad(new Facultad(id));
         this.facultades = facultadService.listadoFacultad();
-        return this.funcionalidad +  "Consultar";
+        return this.funcionalidad + "Consultar";
     }
-    
+
     public String crear() {
         this.facultad = new Facultad();
         return this.funcionalidad + "Crear";
@@ -81,6 +80,4 @@ public class FacultadBean implements Serializable {
         this.facultades = facultades;
     }
 
-    
-    
 }

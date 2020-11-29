@@ -13,9 +13,14 @@ import java.util.List;
  * @author Adolfo
  */
 public interface ClaseDao {
+
     public List<Clase> listClase();
+
     public Clase findByCurso(Clase clase);
+
     public void insertCurso(Clase clase);
+
     public void updateCurso(Clase clase);
+
     public void deleteCurso(Clase clase);
 }

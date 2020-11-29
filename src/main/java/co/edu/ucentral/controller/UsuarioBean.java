@@ -15,6 +15,7 @@ import javax.inject.Named;
 import co.edu.ucentral.models.Usuario;
 import co.edu.ucentral.services.RolService;
 import co.edu.ucentral.services.UsuarioService;
+
 import java.io.Serializable;
 
 @Named("usuarioBean")
@@ -25,7 +26,7 @@ public class UsuarioBean implements Serializable {
     private UsuarioService usuarioService;
     @Inject
     private RolService rolService;
-    
+
     private Usuario usuario;
     private List<Usuario> usuarios;
     private List<Rol> roles;
@@ -34,7 +35,7 @@ public class UsuarioBean implements Serializable {
 
     @PostConstruct
     public void inicializar() {
-        this.roles =  this.rolService.listadoRol();
+        this.roles = this.rolService.listadoRol();
         this.usuarios = usuarioService.listadoUsuario();
     }
 
@@ -45,14 +46,17 @@ public class UsuarioBean implements Serializable {
     }
 
     public String validarUsuario() {
-        Usuario tmp = this.usuarioService.usuarioPorClave(usuario);
+        Usuario tmp = new Usuario();
+        tmp = this.usuarioService.usuarioPorClave(usuario);
         if (tmp != null) {
+            
             return "index";
         } else {
             if (tmp == null) {
                 return "login";
             }
         }
+
         return "login";
     }
 
@@ -70,27 +74,26 @@ public class UsuarioBean implements Serializable {
 
     public String guardar() {
         this.usuario.setRol(new Rol(this.idRol));
-        if (this.usuario.getIdUsuario()== 0) {
+        if (this.usuario.getIdUsuario() == 0) {
             this.usuarioService.guardarUsuario(this.usuario);
-        }else{
+        } else {
             this.usuarioService.modificarUsuario(this.usuario);
         }
         this.usuarios = usuarioService.listadoUsuario();
         return this.funcionalidad + "Consultar";
     }
-    
+
     public String eliminar(int idUsuario) {
         this.usuarioService.eliminarUsuario(new Usuario(idUsuario));
         this.usuarios = usuarioService.listadoUsuario();
-        return this.funcionalidad +  "Consultar";
+        return this.funcionalidad + "Consultar";
     }
-    
+
     public String crear() {
         this.usuario = new Usuario();
         return this.funcionalidad + "Crear";
     }
 
-    
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -123,7 +126,4 @@ public class UsuarioBean implements Serializable {
         this.roles = roles;
     }
 
-    
-    
-    
 }

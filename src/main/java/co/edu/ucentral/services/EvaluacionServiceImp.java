@@ -16,13 +16,14 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class EvaluacionServiceImp implements EvaluacionService{
+public class EvaluacionServiceImp implements EvaluacionService {
 
     @Inject
     private EvaluacionDAO evaluacionDAO;
+
     @Override
     public List<Evaluacion> listEvaluacion() {
-     return evaluacionDAO.listEvaluacion();
+        return evaluacionDAO.listEvaluacion();
     }
 
     @Override
@@ -44,5 +45,5 @@ public class EvaluacionServiceImp implements EvaluacionService{
     public void deleteEvaluacion(Evaluacion evaluacion) {
         evaluacionDAO.deleteEvaluacion(evaluacion);
     }
-    
+
 }

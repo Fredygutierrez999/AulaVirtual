@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.ucentral.controller;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -11,9 +10,9 @@ import javax.faces.annotation.FacesConfig;
 import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 
 @FacesConfig(
-    version = JSF_2_3
+        version = JSF_2_3
 )
 @ApplicationScoped
 public class ConfiguracionBean {
-    
+
 }

@@ -13,9 +13,14 @@ import java.util.List;
  * @author Adolfo
  */
 public interface FacultadDAO {
+
     public List<Facultad> listFacultad();
+
     public Facultad findByFacultad(Facultad facultad);
+
     public void insertFacultad(Facultad facultad);
+
     public void updateFacultad(Facultad facultad);
-    public void deleteFacultad(Facultad facultad);   
+
+    public void deleteFacultad(Facultad facultad);
 }

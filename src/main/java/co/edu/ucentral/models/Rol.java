@@ -105,5 +105,5 @@ public class Rol implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Rol[ idRol=" + idRol + " ]";
     }
-    
+
 }

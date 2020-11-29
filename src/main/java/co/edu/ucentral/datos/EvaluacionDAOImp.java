@@ -17,7 +17,7 @@ import javax.persistence.PersistenceUnit;
  * @author Adolfo
  */
 @Stateless
-public class EvaluacionDAOImp implements EvaluacionDAO{
+public class EvaluacionDAOImp implements EvaluacionDAO {
 
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;

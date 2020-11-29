@@ -25,10 +25,10 @@ public class PeriodoBean {
     private String funcionalidad;
 
     @PostConstruct
-    public void inicializar(){
+    public void inicializar() {
         periodos = new ArrayList<>();
-        periodos =periodoService.listadoPeriodo();
-    
+        periodos = periodoService.listadoPeriodo();
+        periodo = new Periodo();
     }
 
     public Periodo getPeriodo() {
@@ -54,10 +54,9 @@ public class PeriodoBean {
     public void setFuncionalidad(String funcionalidad) {
         this.funcionalidad = funcionalidad;
     }
-    
-    public String crear(){
-       return  "editar";
+
+    public String crear() {
+        return "editar";
     }
-        
-    
+
 }

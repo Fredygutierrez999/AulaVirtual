@@ -16,13 +16,14 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class RolServiceImp implements RolService{
+public class RolServiceImp implements RolService {
 
     @Inject
     private RolDAO rolDAO;
+
     @Override
     public List<Rol> listadoRol() {
-       return rolDAO.listadoRoles();
+        return rolDAO.listadoRoles();
     }
 
     @Override
@@ -32,7 +33,7 @@ public class RolServiceImp implements RolService{
 
     @Override
     public void guardarRol(Rol rol) {
-       rolDAO.insertRol(rol);
+        rolDAO.insertRol(rol);
     }
 
     @Override
@@ -44,5 +45,5 @@ public class RolServiceImp implements RolService{
     public void eliminarRol(Rol rol) {
         rolDAO.deleteRol(rol);
     }
-    
+
 }

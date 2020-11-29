@@ -16,10 +16,11 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class RespuestaServiceImple implements RespuestaService{
+public class RespuestaServiceImple implements RespuestaService {
 
     @Inject
     private RespuestaDAO respuestaDAO;
+
     @Override
     public List<Respuesta> listadoRespuesta() {
         return respuestaDAO.listResultado();
@@ -44,5 +45,5 @@ public class RespuestaServiceImple implements RespuestaService{
     public void eliminarRespuesta(Respuesta respuesta) {
         respuestaDAO.deleteRespuesta(respuesta);
     }
-    
+
 }

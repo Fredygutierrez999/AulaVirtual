@@ -8,15 +8,21 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.models.Pregunta;
 import java.util.List;
 import javax.ejb.Local;
+
 /**
  *
  * @author Adolfo
  */
 @Local
 public interface PreguntaService {
+
     public List<Pregunta> listadoPregunta();
+
     public Pregunta preguntaPorId(Pregunta pregunta);
+
     public void guardarPregunta(Pregunta pregunta);
+
     public void modificarPregunta(Pregunta pregunta);
-    public void eliminarPregunta(Pregunta pregunta);    
+
+    public void eliminarPregunta(Pregunta pregunta);
 }

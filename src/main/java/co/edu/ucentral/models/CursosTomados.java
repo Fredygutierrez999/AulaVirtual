@@ -142,5 +142,5 @@ public class CursosTomados implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.CursosTomados[ idCursosTomados=" + idCursosTomados + " ]";
     }
-    
+
 }

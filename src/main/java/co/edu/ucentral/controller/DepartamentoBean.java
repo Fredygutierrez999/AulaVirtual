@@ -27,8 +27,7 @@ public class DepartamentoBean implements Serializable {
     private DepartamentoServices departamentoService;
     @Inject
     private FacultadBean facultadService;
-  
-    
+
     private Departamento departamento;
     private List<Departamento> departamentos;
     private List<Facultad> facultades;
@@ -37,8 +36,8 @@ public class DepartamentoBean implements Serializable {
 
     @PostConstruct
     public void inicializar() {
-        this.departamentos =  this.departamentoService.listadoDepartamento();
-        this.facultades =  this.facultadService.getFacultades();
+        this.departamentos = this.departamentoService.listadoDepartamento();
+        this.facultades = this.facultadService.getFacultades();
     }
 
     public DepartamentoBean() {
@@ -55,21 +54,21 @@ public class DepartamentoBean implements Serializable {
 
     public String guardar() {
         this.departamento.setIdFacultad(new Facultad(this.idFacultad));
-        if (this.departamento.getIdDepartamento()== 0) {
+        if (this.departamento.getIdDepartamento() == 0) {
             this.departamentoService.guardarDepartamento(this.departamento);
-        }else{
+        } else {
             this.departamentoService.modificarDepartamento(this.departamento);
         }
         this.departamentos = departamentoService.listadoDepartamento();
         return this.funcionalidad + "Consultar";
     }
-    
+
     public String eliminar(int id) {
         this.departamentoService.eliminarDepartamento(new Departamento(id));
         this.departamentos = departamentoService.listadoDepartamento();
-        return this.funcionalidad +  "Consultar";
+        return this.funcionalidad + "Consultar";
     }
-    
+
     public String crear() {
         this.departamento = new Departamento();
         return this.funcionalidad + "Crear";
@@ -107,7 +106,4 @@ public class DepartamentoBean implements Serializable {
         this.facultades = facultades;
     }
 
-    
-    
-    
 }

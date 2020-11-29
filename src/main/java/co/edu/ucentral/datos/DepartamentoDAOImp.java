@@ -12,16 +12,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 
-
 @Stateless
-public class DepartamentoDAOImp implements DepartamentoDAO{
+public class DepartamentoDAOImp implements DepartamentoDAO {
 
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override
     public List<Departamento> listDepartamento() {
-       return em.createNamedQuery("Departamento.findAll",Departamento.class).getResultList();
+        return em.createNamedQuery("Departamento.findAll", Departamento.class).getResultList();
     }
 
     @Override

@@ -172,5 +172,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Usuario[ idUsuario=" + idUsuario + " ]";
     }
-    
+
 }

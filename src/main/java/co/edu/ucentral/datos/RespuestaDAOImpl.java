@@ -10,12 +10,13 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 /**
  *
  * @author Adolfo
  */
 @Stateless
-public class RespuestaDAOImpl implements RespuestaDAO{
+public class RespuestaDAOImpl implements RespuestaDAO {
 
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
@@ -27,7 +28,7 @@ public class RespuestaDAOImpl implements RespuestaDAO{
 
     @Override
     public Respuesta findByRespuesta(Respuesta respuesta) {
-        return em.find(Respuesta.class,respuesta.getIdRespuesta());
+        return em.find(Respuesta.class, respuesta.getIdRespuesta());
     }
 
     @Override
@@ -45,5 +46,4 @@ public class RespuestaDAOImpl implements RespuestaDAO{
         em.remove(em.merge(respuesta));
     }
 
-    
 }

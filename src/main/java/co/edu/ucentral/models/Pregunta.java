@@ -141,5 +141,5 @@ public class Pregunta implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Pregunta[ idPregunta=" + idPregunta + " ]";
     }
-    
+
 }

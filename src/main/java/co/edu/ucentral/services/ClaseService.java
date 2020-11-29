@@ -8,15 +8,21 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.models.Clase;
 import java.util.List;
 import javax.ejb.Local;
+
 /**
  *
  * @author Adolfo
  */
 @Local
 public interface ClaseService {
+
     public List<Clase> listadoClase();
+
     public Clase clasePorId(Clase clase);
+
     public void guardarClase(Clase clase);
+
     public void modificarClase(Clase clase);
-    public void eliminarClase(Clase clase);    
+
+    public void eliminarClase(Clase clase);
 }
