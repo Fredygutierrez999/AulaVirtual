@@ -29,11 +29,12 @@ public class PeriodoBean {
 
     @PostConstruct
     public void inicializar() {
-        this.periodos = new ArrayList<>();
+        this.periodos = this.periodoService.listadoPeriodo();
+        this.periodo = new Periodo();
     }
 
     public PeriodoBean() {
-        this.periodos = this.periodoService.listadoPeriodo();
+        this.periodos = new ArrayList<>();
         this.periodo = new Periodo();
         this.funcionalidad = "periodo";
     }

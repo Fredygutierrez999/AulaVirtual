@@ -27,22 +27,22 @@ public class CursoServiceImp implements CursoService{
     }
 
     @Override
-    public Curso clasePorId(Curso curso) {
+    public Curso cursoPorId(Curso curso) {
        return cursoDAO.findByCurso(curso);
     }
 
     @Override
-    public void guardarClase(Curso curso) {
+    public void guardarCurso(Curso curso) {
         cursoDAO.insertCurso(curso);
     }
 
     @Override
-    public void modificarClase(Curso curso) {
+    public void modificarCurso(Curso curso) {
         cursoDAO.updateCurso(curso);
     }
 
     @Override
-    public void eliminarClase(Curso curso) {
+    public void eliminarCurso(Curso curso) {
         cursoDAO.deleteCurso(curso);
     }
     

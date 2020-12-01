@@ -6,6 +6,7 @@
 package co.edu.ucentral.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -63,10 +64,12 @@ public class Periodo implements Serializable {
 
     public Periodo() {
         this.idPeriodo=0;
+        this.cursosTomadosList = new ArrayList<>();
     }
 
     public Periodo(Integer idPeriodo) {
         this.idPeriodo = idPeriodo;
+        this.cursosTomadosList = new ArrayList<>();
     }
 
     public Periodo(Integer idPeriodo, String nombre, Date fechainicial, Date fechafinal, boolean activo) {
@@ -75,6 +78,7 @@ public class Periodo implements Serializable {
         this.fechainicial = fechainicial;
         this.fechafinal = fechafinal;
         this.activo = activo;
+        this.cursosTomadosList = new ArrayList<>();
     }
 
     public Integer getIdPeriodo() {

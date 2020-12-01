@@ -122,7 +122,7 @@
         <from-view-id>*</from-view-id>
         <navigation-case>
             <from-outcome>periodoConsultar</from-outcome>
-            <to-view-id>/pages/Departamento/consultar.xhtml</to-view-id>
+            <to-view-id>/pages/Periodo/consultar.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule id="16">
@@ -137,6 +137,44 @@
         <navigation-case>
             <from-outcome>periodoCrear</from-outcome>
             <to-view-id>/pages/Periodo/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule id="18">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>cursoConsultar</from-outcome>
+            <to-view-id>/pages/Curso/consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="19">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>cursoEditar</from-outcome>
+            <to-view-id>/pages/Curso/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="20">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>cursoCrear</from-outcome>
+            <to-view-id>/pages/Curso/editar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="20">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>cursoEvaluacion</from-outcome>
+            <to-view-id>/pages/Curso/consultarEvaluaciones.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule id="20">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>cursoAgregarPregunta</from-outcome>
+            <to-view-id>/pages/Curso/editarPregunta.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     

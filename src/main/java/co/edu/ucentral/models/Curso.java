@@ -6,6 +6,7 @@
 package co.edu.ucentral.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -70,10 +71,16 @@ public class Curso implements Serializable {
 
     public Curso() {
         this.idCurso = 0;
+        this.claseList = new ArrayList<>();
+        this.evaluacionList = new ArrayList<>();
+        this.cursosTomadosList = new ArrayList<>();
     }
 
     public Curso(Integer idCurso) {
         this.idCurso = idCurso;
+        this.claseList = new ArrayList<>();
+        this.evaluacionList = new ArrayList<>();
+        this.cursosTomadosList = new ArrayList<>();
     }
 
     public Curso(Integer idCurso, String nombre, String descripcion, Date fechaCreacion) {
@@ -81,6 +88,9 @@ public class Curso implements Serializable {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
+        this.claseList = new ArrayList<>();
+        this.evaluacionList = new ArrayList<>();
+        this.cursosTomadosList = new ArrayList<>();
     }
 
     public Integer getIdCurso() {

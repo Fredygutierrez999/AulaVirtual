@@ -42,47 +42,41 @@
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
                                                                 <span class="fa fa-circle"></span>
-                                                                #{msgs['periodo.tituloconsulta']}
+                                                                #{msgs['evaluacion.tituloconsulta']}
                                                             </font>
                                                         </font>
 
                                                     </h3>
                                                 </div>
                                                 <div class="col-md-2 text-right">
-                                                    <h:commandButton action="#{periodoBean.crear()}" value="#{msgs['periodo.crear']}" class="btn btn-sm btn-success" >
+                                                    <h:commandButton action="#{cursoBean.agregarPregunta()}" value="#{msgs['evaluacion.crear']}" class="btn btn-sm btn-success" >
                                                     </h:commandButton>
                                                 </div>
                                             </div>
 
-                                            <h:dataTable value="#{periodoBean.periodos}" var="periodo" class="table w-100 table-hover">
+
+                                            <h:dataTable value="#{cursoBean.evaluacion.preguntaList}" var="Pregunta" class="table w-100 table-hover">
                                                 <h:column class="col-id">
-                                                    <f:facet name="header">#{msgs['periodo.id']}</f:facet>
-                                                    <h:outputText value="#{periodo.idPeriodo}"></h:outputText>
+                                                    <f:facet name="header">#{msgs['evaluacion.id']}</f:facet>
+                                                    <h:outputText value="#{Pregunta.idPregunta}"></h:outputText>
                                                 </h:column>
                                                 <h:column>
-                                                    <f:facet name="header">#{msgs['periodo.nombre']}</f:facet>
-                                                    <h:outputText value="#{periodo.nombre}"></h:outputText>
-                                                </h:column>
-                                                
-                                                <h:column>
-                                                    <f:facet name="header">#{msgs['periodo.fechainicial']}</f:facet>
-                                                    <h:outputText value="#{periodo.fechainicial}"></h:outputText>
+                                                    <f:facet name="header">#{msgs['evaluacion.nombre']}</f:facet>
+                                                    <h:outputText value="#{Pregunta.nombre}"></h:outputText>
                                                 </h:column>
                                                 <h:column>
-                                                    <f:facet name="header">#{msgs['periodo.fechafinal']}</f:facet>
-                                                    <h:outputText value="#{periodo.fechafinal}"></h:outputText>
+                                                    <f:facet name="header">#{msgs['evaluacion.nota']}</f:facet>
+                                                    <h:outputText value="#{Pregunta.nota}"></h:outputText>
                                                 </h:column>
-                                                
                                                 <h:column class="col-editar">
                                                     <f:facet name="header">#{msgs['btn.editar']}</f:facet>
-                                                    <h:commandButton action="#{periodoBean.editar(periodo.idPeriodo)}" value="#{msgs['btn.editar']}" class="btn btn-secondary btn-sm"></h:commandButton>
+                                                    <h:commandButton action="#{cursoBean.editarPregunta(Pregunta.idPregunta)}" value="#{msgs['btn.editar']}" class="btn btn-secondary btn-sm"></h:commandButton>
                                                 </h:column>
                                                 <h:column class="col-remover">
                                                     <f:facet name="header">#{msgs['btn.eliminar']}</f:facet>
-                                                    <h:commandButton action="#{periodoBean.eliminar(periodo.idPeriodo)}" value="#{msgs['btn.eliminar']}" class="btn btn-danger btn-sm"></h:commandButton>
+                                                    <h:commandButton action="#{cursoBean.eliminarPregunta(Pregunta.idPregunta)}" value="#{msgs['btn.eliminar']}" class="btn btn-danger btn-sm"></h:commandButton>
                                                 </h:column>
                                             </h:dataTable>
-
                                         </h:form>
 
                                     </div>

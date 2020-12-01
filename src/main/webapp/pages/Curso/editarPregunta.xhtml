@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Index aula virtual</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../../WEB-INF/templates/template.xhtml">
+            <ui:define name="content">
+                <main>
+                    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-2">
+                        <div class="container">
+                            <div class="page-header-content pt-4">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto mt-4">
+                                        <h1 class="page-header-title">
+                                            <div class="page-header-icon">
+                                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                                </svg>
+                                            </div>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- Main page content-->
+                    <div class="container mt-n10">
+                        <div class="row">
+                            <div class="col-xxl-12 col-xl-12 mb-12">
+                                <div class="card h-100">
+                                    <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
+
+                                        <h:form> 
+                                            <div class="row mb-1">
+                                                <div class="col-md-10">
+                                                    <h3 class="">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">
+                                                                #{msgs['evaluacion.nombrefnc']} (#{cursoBean.pregunta.idPregunta})
+                                                                <h:inputHidden id="idCurso" value="#{cursoBean.pregunta.idPregunta}"></h:inputHidden>
+                                                            </font>
+                                                        </font>
+
+                                                    </h3>
+                                                </div>
+                                                <div class="col-md-2 text-right">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="nombrePregunta" class="control-label col-sm-4 text-left" value="#{msgs['gen.nombre']}"></h:outputLabel>
+                                                    <h:inputText  required="true" id="nombrePregunta"  value="#{cursoBean.nombrePregunta}" class="form-control"></h:inputText>
+                                                    <h:message for="nombrePregunta" class="form-control alert alert-danger"></h:message>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="notaPregunta" class="control-label col-sm-4 text-left" value="#{msgs['evaluacion.nota']}"></h:outputLabel>
+                                                    <h:inputText required="true" id="notaPregunta"  value="#{cursoBean.notaPregunta}" class="form-control">
+                                                    </h:inputText>
+                                                    <h:message for="notaPregunta" class="form-control alert alert-danger"></h:message>
+                                                </div>
+                                            </div>
+
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal" data-target="#exampleModal">
+                                                Adicionar pregunta
+                                            </button>
+
+                                            <!-- Modal -->
+
+
+
+                                            <h:dataTable value="#{cursoBean.respuestasPregunta}" var="itemRespuesta" class="table table-bordered">
+                                                <h:column class="col-id small">
+                                                    <f:facet name="header">#{msgs['evaluacion.id']}</f:facet>
+                                                    <h:outputText value="#{itemRespuesta.idRespuesta}"/>
+                                                </h:column>
+                                                <h:column class="text-left">
+                                                    <f:facet name="header">#{msgs['evaluacion.nombrerespuesta']}</f:facet>
+                                                    <h:outputText value="#{itemRespuesta.respuesta}"/>
+                                                </h:column>
+                                                 <h:column class="text-left">
+                                                     <f:facet name="header">#{msgs['evaluacion.valorCorrectorespuesta']}</f:facet>
+                                                    <h:outputText value="#{itemRespuesta.valorCorrecto}"/>
+                                                </h:column>
+                                                <h:column class="col-remover">
+                                                    <f:facet name="header">#{msgs['btn.eliminar']}</f:facet>
+                                                    <h:commandButton action="#{cursoBean.removerRespuesta(itemRespuesta.idRespuesta)}" value="#{msgs['btn.eliminar']}" class="btn btn-danger btn-sm"></h:commandButton>
+                                                </h:column>
+                                            </h:dataTable>
+
+
+                                            <div class="row mb-1">
+                                                <div class="col-md-10">
+                                                </div>
+                                                <div class="col-md-2 text-right">
+                                                    <h:commandButton action="#{cursoBean.guardarPregunta()}" value="#{msgs['btn.guardar']}" class="btn btn-sm btn-success" >
+                                                    </h:commandButton>
+                                                </div>
+                                            </div>
+                                        </h:form>
+
+
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <h:form>
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">#{msgs['evaluacion.agregarrespuesta']}</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <h:outputLabel for="nombreRespuesta" class="control-label col-sm-12"><b>#{msgs['evaluacion.nombrerespuesta']}</b></h:outputLabel>
+                                                                <h:inputText id="nombreRespuesta" required="true" value="#{cursoBean.nombreRespuesta}" class="form-control">
+                                                                </h:inputText>
+                                                                <h:message for="nombreRespuesta" class="form-control alert alert-danger"></h:message>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <h:outputLabel for="valorCorrectoRespuesta" class="control-label col-sm-12"><b>#{msgs['evaluacion.valorCorrectorespuesta']}</b></h:outputLabel>
+                                                                <h:selectBooleanCheckbox id="valorCorrectoRespuesta" required="true" value="#{cursoBean.valorCorrectoRespuesta}" class="form-control form-control-sm">
+                                                                </h:selectBooleanCheckbox>
+                                                                <h:message for="valorCorrectoRespuesta" class="form-control alert alert-danger"></h:message>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                                                            <h:commandButton value="Adicionar" action="#{cursoBean.agregarRespuesta()}" class="btn btn-primary btn-sm" style="width:80px;"> </h:commandButton>
+                                                        </div>
+                                                    </h:form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

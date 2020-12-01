@@ -61,6 +61,20 @@
                                                     <h:message for="nombre" class="form-control alert alert-danger"></h:message>
                                                 </div>
                                             </div>
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="fechainicial" class="control-label col-sm-4 text-left" value="#{msgs['periodo.fechainicial']}"></h:outputLabel>
+                                                    <h:inputText  required="true" id="fechainicial"  value="#{periodoBean.periodo.fechainicial}" class="form-control"></h:inputText>
+                                                    <h:message for="fechainicial" class="form-control alert alert-danger"></h:message>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="fechafinal" class="control-label col-sm-4 text-left" value="#{msgs['periodo.fechafinal']}"></h:outputLabel>
+                                                    <h:inputText  required="true" id="fechafinal"  value="#{periodoBean.periodo.fechafinal}" class="form-control"></h:inputText>
+                                                    <h:message for="fechafinal" class="form-control alert alert-danger"></h:message>
+                                                </div>
+                                            </div>
                                             
 
 

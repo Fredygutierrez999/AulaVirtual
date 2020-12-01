@@ -6,6 +6,7 @@
 package co.edu.ucentral.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -55,16 +56,19 @@ public class Respuesta implements Serializable {
 
     public Respuesta() {
         this.idRespuesta = 0;
+        this.resultadoRespuestaList = new ArrayList<>();
     }
 
     public Respuesta(Integer idRespuesta) {
         this.idRespuesta = idRespuesta;
+        this.resultadoRespuestaList = new ArrayList<>();
     }
 
     public Respuesta(Integer idRespuesta, String respuesta, boolean valorCorrecto) {
         this.idRespuesta = idRespuesta;
         this.respuesta = respuesta;
         this.valorCorrecto = valorCorrecto;
+        this.resultadoRespuestaList = new ArrayList<>();
     }
 
     public Integer getIdRespuesta() {

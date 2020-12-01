@@ -30,6 +30,7 @@ public class PreguntaDAOImpl implements PreguntaDAO{
     public Pregunta findByPregunta(Pregunta pregunta) {
         return em.find(Pregunta.class, pregunta.getIdPregunta());
     }
+    
 
     @Override
     public void insertPregunta(Pregunta pregunta) {
