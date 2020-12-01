@@ -78,10 +78,7 @@ public class UsuarioBean implements Serializable {
         return "login";
     }
     
-    public String cerrarSesion(){
-        this.usuario = null;
-        return "login";
-    }
+   
 
     public String consultarUsuario() {
         this.usuarios = usuarioService.listadoUsuario();
