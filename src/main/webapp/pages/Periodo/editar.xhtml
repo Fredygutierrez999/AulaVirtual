@@ -42,7 +42,7 @@
                                                     <h3 class="">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                #{msgs['departamento.nombrefnc']} (#{periodoBean.periodo.idPeriodo})
+                                                                #{msgs['periodo.nombrefnc']} (#{periodoBean.periodo.idPeriodo})
                                                                 <h:inputHidden id="idPeriodo" value="#{periodoBean.periodo.idPeriodo}"></h:inputHidden>
                                                             </font>
                                                         </font>
@@ -73,6 +73,13 @@
                                                     <h:outputLabel for="fechafinal" class="control-label col-sm-4 text-left" value="#{msgs['periodo.fechafinal']}"></h:outputLabel>
                                                     <h:inputText  required="true" id="fechafinal"  value="#{periodoBean.periodo.fechafinal}" class="form-control"></h:inputText>
                                                     <h:message for="fechafinal" class="form-control alert alert-danger"></h:message>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <div class="col-md-12 form-group">
+                                                    <h:outputLabel for="activo" class="control-label col-sm-4 text-left" value="#{msgs['periodo.estado']}"></h:outputLabel>
+                                                    <h:selectBooleanCheckbox  required="true" id="activo"  value="#{periodoBean.periodo.activo}" class="form-control"></h:selectBooleanCheckbox>
+                                                    <h:message for="activo" class="form-control alert alert-danger"></h:message>
                                                 </div>
                                             </div>
                                             

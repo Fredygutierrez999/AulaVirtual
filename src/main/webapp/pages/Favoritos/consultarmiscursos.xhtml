@@ -1,2 +1,103 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Index aula virtual</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../../WEB-INF/templates/template.xhtml">
+            <ui:define name="content">
+                <main>
+                    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-2">
+                        <div class="container">
+                            <div class="page-header-content pt-4">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto mt-4">
+                                        <h1 class="page-header-title">
+                                            <div class="page-header-icon">
+                                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                                </svg>
+                                            </div>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- Main page content-->
+                    <div class="container mt-n10">
+                        <div class="row">
+                            <div class="col-xxl-12 col-xl-12 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
+
+                                        <h:form> 
+                                            <div class="row mb-1">
+                                                <div class="col-md-10">
+                                                    <h3 class="">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <span class="fa fa-circle"></span>
+                                                                #{msgs['app.miscursos']}
+                                                            </font>
+                                                        </font>
+
+                                                    </h3>
+                                                </div>
+                                            </div>
+
+                                            <c:if test="${cursosTomadosBean.mensaje != ''}">
+                                                <div class="alert alert-danger">
+                                                    #{cursosTomadosBean.mensaje}
+                                                </div>
+                                            </c:if>
+                                            
+                                            
+                                            <div class="row w-100">
+                                                <ui:repeat var="curso" value="#{cursosTomadosBean.cursostomados}" >
+                                                    <div class="card col-md-3 m-1" style="width: 18rem;">
+                                                        <div class="text-center mt-4">
+                                                            <span class="fa fa-book" style="font-size:25px"></span>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title text-justify text-center" style="height:50px;">
+                                                                #{curso.idCurso.nombre}
+                                                            </h5>
+                                                            <span class="badge badge-info text-center">
+                                                                <strong>Nota</strong> #{curso.notaFinal} <br/>
+                                                            </span>
+                                                            <span class="badge badge-info text-center">
+                                                                <strong>Periodo</strong> #{curso.idPeriodo.nombre} <br/>
+                                                            </span>
+                                                            <br/>
+                                                            <br/>
+                                                            <p class="card-text text-truncate text-justify small" style="height: 150px;white-space: revert;" title="#{curso.idCurso.descripcion}">
+                                                                #{curso.idCurso.descripcion}
+                                                            </p>
+                                                            <h:commandButton value="Ir al curso" action="#{cursosTomadosBean.consultarCurso(curso.idCursosTomados)}" class="btn btn-light btn-sm w-75"></h:commandButton>
+                                                            <h:commandButton value="Eli." action="#{cursosTomadosBean.eliminarCursoTomado(curso.idCursosTomados)}" class="btn btn-danger btn-sm w-15 ml-1"></h:commandButton>
+                                                        </div>
+                                                    </div>
+                                                </ui:repeat>
+                                            </div>
+
+                                        </h:form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
 

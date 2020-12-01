@@ -14,6 +14,7 @@
     <class>co.edu.ucentral.models.ResultadoRespuesta</class>
     <class>co.edu.ucentral.models.Rol</class>
     <class>co.edu.ucentral.models.Usuario</class>
+    <class>co.edu.ucentral.controller.CursosTomadosBean</class>
     <properties/>
   </persistence-unit>
 </persistence>

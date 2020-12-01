@@ -43,7 +43,7 @@
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
                                                                 <span class="fa fa-circle"></span>
-                                                                #{msgs['curso.tituloconsulta']}
+                                                                #{msgs['app.Evaluacionfinal']}
                                                             </font>
                                                         </font>
 
@@ -56,25 +56,40 @@
                                                     #{cursosTomadosBean.mensaje}
                                                 </div>
                                             </c:if>
-                                            
+
+
+                                            <div class="row w-100">
+                                                <div class="col-md-12">
+                                                    <h3>
+                                                        #{cursosTomadosBean.cursoEvaluacion.idCurso.nombre}
+                                                    </h3>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <h5>
+                                                        #{cursosTomadosBean.evaluacion.nombre}
+                                                    </h5>
+                                                </div>
+
+                                                <ol>
+                                                    <ui:repeat var="pregunta" value="#{cursosTomadosBean.evaluacion.preguntaList}" >
+                                                        <li>
+                                                            #{pregunta.nombre}
+                                                            <ul>
+                                                               
+                                                            </ul>
+                                                        </li>
+                                                    </ui:repeat>
+                                                </ol>
+
+                                            </div>
                                             
                                             <div class="row w-100">
-                                                <ui:repeat var="curso" value="#{cursosTomadosBean.cursosdisponibles}" >
-                                                    <div class="card col-md-3 m-1" style="width: 18rem;">
-                                                        <div class="text-center mt-4">
-                                                            <span class="fa fa-book" style="font-size:25px"></span>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <h5 class="card-title text-justify" style="height:70px;">
-                                                                #{curso.nombre}
-                                                            </h5>
-                                                            <p class="card-text text-truncate text-justify small" style="height: 150px;white-space: revert;" title="#{curso.descripcion}">
-                                                                #{curso.descripcion}
-                                                            </p>
-                                                            <h:commandButton value="Tomar curso" action="#{cursosTomadosBean.tomarCurso(curso.idCurso)}" class="btn btn-light btn-sm w-100"></h:commandButton>
-                                                        </div>
-                                                    </div>
-                                                </ui:repeat>
+                                                <div class="col-md-5">
+                                                    
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <h:commandButton class="btn btn-sm btn-success" value="Finalizar" action="#{cursoTomadosBean.realizarEvaluacion(cursosTomadosBean.cursoTomado.idCursosTomados)}" ></h:commandButton>
+                                                </div>
                                             </div>
 
                                         </h:form>

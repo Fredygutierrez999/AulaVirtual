@@ -178,6 +178,39 @@
         </navigation-case>
     </navigation-rule>
     
+    <navigation-rule id="21">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>favoritosConsultarCursos</from-outcome>
+            <to-view-id>/pages/Favoritos/todosloscursos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule id="22">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>favoritosMisCursos</from-outcome>
+            <to-view-id>/pages/Favoritos/consultarmiscursos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule id="23">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>favoritosVerCursosTomado</from-outcome>
+            <to-view-id>/pages/Favoritos/vercursotomado.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule id="24">
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>favoritosRealizarEvaluacion</from-outcome>
+            <to-view-id>/pages/Favoritos/realizarevalucion.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
     
     <application>
         <locale-config>

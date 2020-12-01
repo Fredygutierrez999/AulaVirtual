@@ -23,4 +23,6 @@ public interface PeriodoDAO {
     public void updatePeriodo(Periodo periodo);
 
     public void deletePeriodo(Periodo periodo);
+    
+    public List<Periodo> listPeriodoPorEstado(boolean activo);
 }

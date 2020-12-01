@@ -32,19 +32,40 @@ public class PeriodoBean {
     private String mensaje;
 
     @PostConstruct
-    public void inicializar() throws UnsupportedOperationException{
-        if (usuariologin.getUsuario().getNombre() != null) {
-            System.out.println("usuaiologin.getUsuario = " + usuariologin.getUsuario());
-            periodos = new ArrayList<>();
+    public void inicializar() throws UnsupportedOperationException {
+        //if (usuariologin.getUsuario().getNombre() != null) {
+         //   periodos = new ArrayList<>();
             periodos = periodoService.listadoPeriodo();
             periodo = new Periodo();
-            this.funcionalidad = "periodo";
+        //} else {
+        //    setMensaje("Usuario no autorizado");
+        //    PrimeFaces pf = PrimeFaces.current();
+        //   pf.executeScript("$('#modal').modal('show')");
+        //}
+    }
+
+    public void PeriodoBean() {
+        this.periodos = new ArrayList<>();
+        this.funcionalidad = "periodo";
+    }
+
+    public String editar(int IdPeriodo) {
+        periodo = this.periodoService.periodoPorId(new Periodo(IdPeriodo));
+        return this.funcionalidad + "Editar";
+    }
+
+    public String eliminar(int IdPeriodo) {
+        periodo = this.periodoService.periodoPorId(new Periodo(IdPeriodo));
+        return this.funcionalidad + "Consultar";
+    }
+
+    public String guardar() {
+        if (periodo.getIdPeriodo() == 0) {
+            this.periodoService.guardarPeriodo(periodo);
         } else {
-            setMensaje("Usuario no autorizado");
-            PrimeFaces pf = PrimeFaces.current();
-            pf.executeScript("$('#modal').modal('show')");
-            
+            this.periodoService.modificarPeriodo(periodo);
         }
+        return this.funcionalidad + "Consultar";
     }
 
     public Periodo getPeriodo() {

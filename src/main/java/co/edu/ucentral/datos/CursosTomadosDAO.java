@@ -5,7 +5,9 @@
  */
 package co.edu.ucentral.datos;
 
+import co.edu.ucentral.models.Curso;
 import co.edu.ucentral.models.CursosTomados;
+import co.edu.ucentral.models.Usuario;
 import java.util.List;
 
 /**
@@ -23,4 +25,8 @@ public interface CursosTomadosDAO {
     public void updateCursosTomados(CursosTomados cursosTomados);
 
     public void deleteCursosTomados(CursosTomados cursosTomados);
+    
+    public List<CursosTomados> listCursosTomadosPorUsuario(Usuario IdUsuario);
+    
+    public List<CursosTomados> listCursosTomadosPorUsuarioYCurso(Usuario IdUsuario, Curso IdCurso);
 }

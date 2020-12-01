@@ -37,7 +37,9 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Curso.findByIdCurso", query = "SELECT c FROM Curso c WHERE c.idCurso = :idCurso"),
     @NamedQuery(name = "Curso.findByNombre", query = "SELECT c FROM Curso c WHERE c.nombre = :nombre"),
     @NamedQuery(name = "Curso.findByDescripcion", query = "SELECT c FROM Curso c WHERE c.descripcion = :descripcion"),
-    @NamedQuery(name = "Curso.findByFechaCreacion", query = "SELECT c FROM Curso c WHERE c.fechaCreacion = :fechaCreacion")})
+    @NamedQuery(name = "Curso.findByFechaCreacion", query = "SELECT c FROM Curso c WHERE c.fechaCreacion = :fechaCreacion"),
+    @NamedQuery(name = "Curso.findByNombreLike", query = "SELECT c FROM Curso c WHERE c.nombre LIKE :nombre")
+})
 public class Curso implements Serializable {
 
     private static final long serialVersionUID = 1L;
