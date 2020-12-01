@@ -10,15 +10,15 @@ import co.edu.ucentral.services.PeriodoService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+
 import javax.faces.annotation.ManagedProperty;
-import javax.faces.context.ExternalContext;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.primefaces.PrimeFaces;
 
 @Named("periodoBean")
 @RequestScoped
@@ -32,24 +32,20 @@ public class PeriodoBean {
     @Inject
     @ManagedProperty(value = "#{usuarioBean}")
     private UsuarioBean usuariologin;
+    private String mensaje;
 
     @PostConstruct
-    public void inicializar() {
-        System.out.println("usuariologin.getUsuario() = " + usuariologin.getUsuario());
-        System.out.println("this nombre = " + usuariologin.getUsuario().getNombre());
+    public void inicializar() throws UnsupportedOperationException{
+
         if (usuariologin.getUsuario().getNombre() != null) {
             System.out.println("usuaiologin.getUsuario = " + usuariologin.getUsuario());
             periodos = new ArrayList<>();
             periodos = periodoService.listadoPeriodo();
             periodo = new Periodo();
         } else {
-            try {
-                FacesContext facesContext = FacesContext.getCurrentInstance();
-                ExternalContext externalContext = facesContext.getExternalContext();
-                externalContext.redirect("login");
-            } catch (IOException ex) {
-                Logger.getLogger(PeriodoBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            setMensaje("Usuario no autorizado");
+            PrimeFaces pf = PrimeFaces.current();
+            pf.executeScript("$('#modal').modal('show')");
             
         }
 
@@ -84,7 +80,16 @@ public class PeriodoBean {
     }
 
     public String login() {
+
         return "login";
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
 
 }

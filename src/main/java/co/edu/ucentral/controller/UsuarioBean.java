@@ -16,6 +16,7 @@ import co.edu.ucentral.services.RolService;
 import co.edu.ucentral.services.UsuarioService;
 
 import java.io.Serializable;
+import java.util.Locale;
 import javax.enterprise.context.SessionScoped;
 
 import javax.faces.application.FacesMessage;
@@ -36,6 +37,8 @@ public class UsuarioBean implements Serializable {
     private List<Rol> roles;
     private String funcionalidad;
     private int idRol;
+    private boolean idioma;
+    private String mensaje;
 
     @PostConstruct
     public void inicializar() {
@@ -53,14 +56,14 @@ public class UsuarioBean implements Serializable {
         Usuario tmp = new Usuario();
         tmp = this.usuarioService.usuarioPorClave(usuario);
         if (tmp != null) {
-            usuario =tmp;
+            usuario = tmp;
             return "index";
         } else {
             if (tmp == null) {
                 String msg = "Usuario o contraseña invalidos";
-                FacesMessage facesMessage=new FacesMessage(FacesMessage.SEVERITY_ERROR,msg,msg);
-                FacesContext facesContext= FacesContext.getCurrentInstance();
-                String componentId= null;
+                FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg);
+                FacesContext facesContext = FacesContext.getCurrentInstance();
+                String componentId = null;
                 facesContext.addMessage(componentId, facesMessage);
                 return "login";
             }
@@ -135,4 +138,28 @@ public class UsuarioBean implements Serializable {
         this.roles = roles;
     }
 
+    public boolean isIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(boolean idioma) {
+        this.idioma = idioma;
+    }
+
+    public boolean validarIdioma() {
+
+        FacesContext.getCurrentInstance().getApplication().setDefaultLocale(Locale.ENGLISH);
+        return true;
+    }
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+    public String login(){
+        return "login";
+    }
+    
 }
