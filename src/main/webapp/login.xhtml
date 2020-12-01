@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Index aula virtual</title>
     </h:head>
@@ -46,11 +47,17 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputPassword">#{msgs['login.lenguaje']}</label>
                                                     <div class="form-check">
-                                                       <input class="form-check-input" id="paisCol" name="chkpais" checked="checked" value="ESP" type="radio"/>
+
+                                                        <input class="form-check-input" id="paisCol" name="chkpais" checked="checked" value="ESP" type="radio"/>
                                                         <label class="form-check-label" for="paisCol">
                                                             <img src="resources/imagenes/col.png"></img>
                                                         </label>
                                                         <br/>
+                                                        <h:selectOneRadio id="item" class="form-check-input" value="#{usuarioBean.idioma}">
+                                                            <f:selectItem itemLabel="INGLES" itemValue="#{usuarioBean.ingles}" />
+                                                            <f:selectItem itemLabel="ESPAÑOL" itemValue="#{usuarioBean.espaniol}" />
+                                                            <f:ajax execute="@this" render="@this"  listener="#{usuarioBean.validarIdioma()}"/>
+                                                        </h:selectOneRadio>
                                                         <input class="form-check-input" id="paisEeuu" checked=""  name="chkpais" value="ENG" type="radio"/>
                                                         <label class="form-check-label" for="paisEeuu">
                                                             <img src="resources/imagenes/eeuu.png"></img>
