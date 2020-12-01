@@ -20,7 +20,7 @@ public class PreguntaServiceImp implements PreguntaService {
 
     @Inject
     private PreguntaDAO preguntaDAO;
-    
+
     @Override
     public List<Pregunta> listadoPregunta() {
         return preguntaDAO.listPregunta();
@@ -33,7 +33,7 @@ public class PreguntaServiceImp implements PreguntaService {
 
     @Override
     public void guardarPregunta(Pregunta pregunta) {
-       preguntaDAO.insertPregunta(pregunta);
+        preguntaDAO.insertPregunta(pregunta);
     }
 
     @Override
@@ -45,5 +45,5 @@ public class PreguntaServiceImp implements PreguntaService {
     public void eliminarPregunta(Pregunta pregunta) {
         preguntaDAO.deletePregunta(pregunta);
     }
-    
+
 }

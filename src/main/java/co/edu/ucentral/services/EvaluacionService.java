@@ -8,15 +8,21 @@ package co.edu.ucentral.services;
 import co.edu.ucentral.models.Evaluacion;
 import java.util.List;
 import javax.ejb.Local;
+
 /**
  *
  * @author Adolfo
  */
 @Local
 public interface EvaluacionService {
+
     public List<Evaluacion> listEvaluacion();
+
     public Evaluacion findByEvaluacion(Evaluacion evaluacion);
+
     public void insertEvaluacion(Evaluacion evaluacion);
+
     public void updateEvaluacion(Evaluacion evaluacion);
-    public void deleteEvaluacion(Evaluacion evaluacion);     
+
+    public void deleteEvaluacion(Evaluacion evaluacion);
 }

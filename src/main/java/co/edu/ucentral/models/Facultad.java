@@ -45,7 +45,7 @@ public class Facultad implements Serializable {
     private List<Departamento> departamentoList;
 
     public Facultad() {
-        this.idFacultad= 0;
+        this.idFacultad = 0;
     }
 
     public Facultad(Integer idFacultad) {
@@ -105,5 +105,5 @@ public class Facultad implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Facultad[ idFacultad=" + idFacultad + " ]";
     }
-    
+
 }

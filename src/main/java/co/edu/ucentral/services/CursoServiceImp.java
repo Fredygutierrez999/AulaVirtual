@@ -16,21 +16,21 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class CursoServiceImp implements CursoService{
+public class CursoServiceImp implements CursoService {
 
     @Inject
     private CursoDAO cursoDAO;
-    
+
     @Override
     public List<Curso> listadoCurso() {
-         return cursoDAO.listCursos();
+        return cursoDAO.listCursos();
     }
 
     @Override
     public Curso cursoPorId(Curso curso) {
        return cursoDAO.findByCurso(curso);
     }
-
+    
     @Override
     public void guardarCurso(Curso curso) {
         cursoDAO.insertCurso(curso);
@@ -45,5 +45,5 @@ public class CursoServiceImp implements CursoService{
     public void eliminarCurso(Curso curso) {
         cursoDAO.deleteCurso(curso);
     }
-    
+
 }

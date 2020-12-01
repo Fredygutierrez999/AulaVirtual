@@ -15,8 +15,12 @@ import java.util.List;
 public interface RespuestaDAO {
 
     public List<Respuesta> listResultado();
+
     public Respuesta findByRespuesta(Respuesta respuesta);
+
     public void insertRespuesta(Respuesta respuesta);
+
     public void updateRespuesta(Respuesta respuesta);
+
     public void deleteRespuesta(Respuesta respuesta);
 }

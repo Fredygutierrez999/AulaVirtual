@@ -13,10 +13,15 @@ import java.util.List;
  * @author Adolfo
  */
 public interface RolDAO {
-   public List<Rol> listadoRoles();
-   public Rol findByIdRol(Rol rol);
-   public void insertRol(Rol rol);
-   public void updateRol(Rol rol);
-   public void deleteRol(Rol rol);
-   
+
+    public List<Rol> listadoRoles();
+
+    public Rol findByIdRol(Rol rol);
+
+    public void insertRol(Rol rol);
+
+    public void updateRol(Rol rol);
+
+    public void deleteRol(Rol rol);
+
 }

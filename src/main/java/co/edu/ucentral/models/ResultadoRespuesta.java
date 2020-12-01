@@ -126,5 +126,5 @@ public class ResultadoRespuesta implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.ResultadoRespuesta[ idResultadoRespuesta=" + idResultadoRespuesta + " ]";
     }
-    
+
 }

@@ -13,9 +13,14 @@ import java.util.List;
  * @author Adolfo
  */
 public interface PeriodoDAO {
+
     public List<Periodo> listPeriodo();
+
     public Periodo findByPeriodo(Periodo periodo);
+
     public void insertPeriodo(Periodo periodo);
+
     public void updatePeriodo(Periodo periodo);
-    public void deletePeriodo(Periodo periodo);   
+
+    public void deletePeriodo(Periodo periodo);
 }

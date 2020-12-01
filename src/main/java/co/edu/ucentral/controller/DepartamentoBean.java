@@ -6,8 +6,6 @@
 package co.edu.ucentral.controller;
 
 import co.edu.ucentral.models.Departamento;
-import co.edu.ucentral.models.Facultad;
-import co.edu.ucentral.models.Rol;
 import co.edu.ucentral.services.DepartamentoServices;
 import java.util.List;
 import java.util.ArrayList;
@@ -15,9 +13,11 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import co.edu.ucentral.services.FacultadService;
+
 import java.io.Serializable;
 import co.edu.ucentral.models.Facultad;
+import javax.faces.annotation.ManagedProperty;
+import org.primefaces.PrimeFaces;
 
 @Named("departamentoBean")
 @RequestScoped
@@ -27,18 +27,26 @@ public class DepartamentoBean implements Serializable {
     private DepartamentoServices departamentoService;
     @Inject
     private FacultadBean facultadService;
-  
-    
+
     private Departamento departamento;
     private List<Departamento> departamentos;
     private List<Facultad> facultades;
     private String funcionalidad;
     private int idFacultad;
+    @Inject
+    @ManagedProperty(value = "#{usuarioBean}")
+    private UsuarioBean usuariologin;
 
     @PostConstruct
     public void inicializar() {
-        this.departamentos =  this.departamentoService.listadoDepartamento();
-        this.facultades =  this.facultadService.getFacultades();
+        if (usuariologin.getUsuario().getNombre()!= null) {
+            this.departamentos = this.departamentoService.listadoDepartamento();
+            this.facultades = this.facultadService.getFacultades();
+        }else{
+            usuariologin.setMensaje("Usuario no autorizado");
+            PrimeFaces pf = PrimeFaces.current();
+            pf.executeScript("$('#modal').modal('show')");
+        }
     }
 
     public DepartamentoBean() {
@@ -55,21 +63,21 @@ public class DepartamentoBean implements Serializable {
 
     public String guardar() {
         this.departamento.setIdFacultad(new Facultad(this.idFacultad));
-        if (this.departamento.getIdDepartamento()== 0) {
+        if (this.departamento.getIdDepartamento() == 0) {
             this.departamentoService.guardarDepartamento(this.departamento);
-        }else{
+        } else {
             this.departamentoService.modificarDepartamento(this.departamento);
         }
         this.departamentos = departamentoService.listadoDepartamento();
         return this.funcionalidad + "Consultar";
     }
-    
+
     public String eliminar(int id) {
         this.departamentoService.eliminarDepartamento(new Departamento(id));
         this.departamentos = departamentoService.listadoDepartamento();
-        return this.funcionalidad +  "Consultar";
+        return this.funcionalidad + "Consultar";
     }
-    
+
     public String crear() {
         this.departamento = new Departamento();
         return this.funcionalidad + "Crear";
@@ -107,7 +115,10 @@ public class DepartamentoBean implements Serializable {
         this.facultades = facultades;
     }
 
+    public UsuarioBean getUsuariologin() {
+        return usuariologin;
+    }
+
     
-    
-    
+
 }

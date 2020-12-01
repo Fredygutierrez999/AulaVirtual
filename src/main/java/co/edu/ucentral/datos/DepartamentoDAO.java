@@ -13,9 +13,14 @@ import java.util.List;
  * @author Adolfo
  */
 public interface DepartamentoDAO {
-   public List<Departamento> listDepartamento();
+
+    public List<Departamento> listDepartamento();
+
     public Departamento findByDepartamento(Departamento departamento);
+
     public void insertDepartamento(Departamento departamento);
+
     public void updateDepartamento(Departamento departamento);
-    public void deleteDepartamento(Departamento departamento);    
+
+    public void deleteDepartamento(Departamento departamento);
 }

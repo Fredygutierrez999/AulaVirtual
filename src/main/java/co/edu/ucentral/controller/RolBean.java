@@ -61,7 +61,7 @@ public class RolBean {
     public String guardar() {
         if (this.rol.getIdRol() == 0) {
             this.rolService.guardarRol(this.rol);
-        }else{
+        } else {
             this.rolService.modificarRol(rol);
         }
         this.roles = this.rolService.listadoRol();

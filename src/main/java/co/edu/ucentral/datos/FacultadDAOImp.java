@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Adolfo
  */
 @Stateless
-public class FacultadDAOImp implements FacultadDAO{
+public class FacultadDAOImp implements FacultadDAO {
 
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
@@ -28,7 +28,7 @@ public class FacultadDAOImp implements FacultadDAO{
 
     @Override
     public Facultad findByFacultad(Facultad facultad) {
-        return em.find(Facultad.class,facultad.getIdFacultad());
+        return em.find(Facultad.class, facultad.getIdFacultad());
     }
 
     @Override

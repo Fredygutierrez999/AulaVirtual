@@ -9,32 +9,40 @@ import co.edu.ucentral.models.Rol;
 import java.util.List;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import co.edu.ucentral.models.Usuario;
 import co.edu.ucentral.services.RolService;
 import co.edu.ucentral.services.UsuarioService;
+
 import java.io.Serializable;
+import java.util.Locale;
+import javax.enterprise.context.SessionScoped;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 
 @Named("usuarioBean")
-@RequestScoped
+@SessionScoped
 public class UsuarioBean implements Serializable {
 
     @Inject
     private UsuarioService usuarioService;
     @Inject
     private RolService rolService;
-    
+
     private Usuario usuario;
     private List<Usuario> usuarios;
     private List<Rol> roles;
     private String funcionalidad;
     private int idRol;
+    private boolean idioma;
+    private String mensaje;
 
     @PostConstruct
     public void inicializar() {
-        this.roles =  this.rolService.listadoRol();
+        this.roles = this.rolService.listadoRol();
         this.usuarios = usuarioService.listadoUsuario();
     }
 
@@ -45,14 +53,22 @@ public class UsuarioBean implements Serializable {
     }
 
     public String validarUsuario() {
-        Usuario tmp = this.usuarioService.usuarioPorClave(usuario);
+        Usuario tmp = new Usuario();
+        tmp = this.usuarioService.usuarioPorClave(usuario);
         if (tmp != null) {
+            usuario = tmp;
             return "index";
         } else {
             if (tmp == null) {
+                String msg = "Usuario o contraseña invalidos";
+                FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg);
+                FacesContext facesContext = FacesContext.getCurrentInstance();
+                String componentId = null;
+                facesContext.addMessage(componentId, facesMessage);
                 return "login";
             }
         }
+
         return "login";
     }
 
@@ -70,27 +86,26 @@ public class UsuarioBean implements Serializable {
 
     public String guardar() {
         this.usuario.setRol(new Rol(this.idRol));
-        if (this.usuario.getIdUsuario()== 0) {
+        if (this.usuario.getIdUsuario() == 0) {
             this.usuarioService.guardarUsuario(this.usuario);
-        }else{
+        } else {
             this.usuarioService.modificarUsuario(this.usuario);
         }
         this.usuarios = usuarioService.listadoUsuario();
         return this.funcionalidad + "Consultar";
     }
-    
+
     public String eliminar(int idUsuario) {
         this.usuarioService.eliminarUsuario(new Usuario(idUsuario));
         this.usuarios = usuarioService.listadoUsuario();
-        return this.funcionalidad +  "Consultar";
+        return this.funcionalidad + "Consultar";
     }
-    
+
     public String crear() {
         this.usuario = new Usuario();
         return this.funcionalidad + "Crear";
     }
 
-    
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -123,7 +138,28 @@ public class UsuarioBean implements Serializable {
         this.roles = roles;
     }
 
-    
-    
+    public boolean isIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(boolean idioma) {
+        this.idioma = idioma;
+    }
+
+    public boolean validarIdioma() {
+
+        FacesContext.getCurrentInstance().getApplication().setDefaultLocale(Locale.ENGLISH);
+        return true;
+    }
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+    public String login(){
+        return "login";
+    }
     
 }

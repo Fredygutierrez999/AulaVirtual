@@ -13,9 +13,14 @@ import java.util.List;
  * @author Adolfo
  */
 public interface EvaluacionDAO {
+
     public List<Evaluacion> listEvaluacion();
+
     public Evaluacion findByEvaluacion(Evaluacion evaluacio);
+
     public void insertEvaluacion(Evaluacion evaluacio);
+
     public void updateEvaluacion(Evaluacion evaluacio);
-    public void deleteEvaluacion(Evaluacion evaluacio);   
+
+    public void deleteEvaluacion(Evaluacion evaluacio);
 }

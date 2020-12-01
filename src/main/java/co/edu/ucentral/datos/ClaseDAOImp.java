@@ -12,20 +12,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class ClaseDAOImp implements  ClaseDao{
-    
+public class ClaseDAOImp implements ClaseDao {
+
     @PersistenceContext(unitName = "AulaWeb")
 
     private EntityManager em;
 
     @Override
     public List<Clase> listClase() {
-        return  em.createNamedQuery("Clase.findAll",Clase.class).getResultList();
+        return em.createNamedQuery("Clase.findAll", Clase.class).getResultList();
     }
 
     @Override
     public Clase findByCurso(Clase clase) {
-        return em.find(Clase.class,clase.getIdClase());
+        return em.find(Clase.class, clase.getIdClase());
     }
 
     @Override
@@ -42,5 +42,5 @@ public class ClaseDAOImp implements  ClaseDao{
     public void deleteCurso(Clase clase) {
         em.remove(em.merge(em));
     }
- 
+
 }

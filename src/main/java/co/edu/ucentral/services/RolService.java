@@ -15,9 +15,14 @@ import javax.ejb.Local;
  */
 @Local
 public interface RolService {
+
     public List<Rol> listadoRol();
+
     public Rol rolPorId(Rol rol);
+
     public void guardarRol(Rol rol);
+
     public void modificarRol(Rol rol);
-    public void eliminarRol(Rol rol);      
+
+    public void eliminarRol(Rol rol);
 }

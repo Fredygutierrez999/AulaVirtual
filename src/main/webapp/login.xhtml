@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Index aula virtual</title>
     </h:head>
@@ -25,6 +26,7 @@
                                         </div>
                                         <div class="card-body">
                                             <!-- Login form-->
+                                            <h:messages globalOnly="true" class="form-control alert alert-danger" />
                                             <h:form>
                                                 <!-- Form Group (email address)-->
                                                 <div class="form-group">
@@ -44,12 +46,12 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputPassword">#{msgs['login.lenguaje']}</label>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" id="paisCol" name="chkpais"  checked="checked" value="ESP" type="radio"/>
+                                                       <input class="form-check-input" id="paisCol" name="chkpais" checked="checked" value="ESP" type="radio"/>
                                                         <label class="form-check-label" for="paisCol">
                                                             <img src="resources/imagenes/col.png"></img>
                                                         </label>
                                                         <br/>
-                                                        <input class="form-check-input" id="paisEeuu" name="chkpais" value="ENG" type="radio"/>
+                                                        <input class="form-check-input" id="paisEeuu" checked=""  name="chkpais" value="ENG" type="radio"/>
                                                         <label class="form-check-label" for="paisEeuu">
                                                             <img src="resources/imagenes/eeuu.png"></img>
                                                         </label>

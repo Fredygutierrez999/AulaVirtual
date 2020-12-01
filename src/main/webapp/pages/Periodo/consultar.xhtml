@@ -34,11 +34,33 @@
                             <div class="col-xxl-12 col-xl-12 mb-4">
                                 <div class="card h-100">
                                     <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
-
+                                        <h:messages globalOnly="true" class="alert alert-danger"/>
+                                        <div>
+                                            <div class="modal" id="modal" tabindex="-1" role="dialog">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Usuario</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>#{periodoBean.mensaje}</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h:form>
+                                                                <h:commandButton class="btn btn-primary" value="Salir" action="#{periodoBean.login()}" />
+                                                                
+                                                            </h:form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <h:form> 
+
                                             <div class="row mb-1">
                                                 <div class="col-md-10">
                                                     <h3 class="">
+
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
                                                                 <span class="fa fa-circle"></span>
@@ -49,10 +71,43 @@
                                                     </h3>
                                                 </div>
                                                 <div class="col-md-2 text-right">
-                                                    <h:commandButton action="#{periodoBean.crear()}" value="#{msgs['periodo.crear']}" class="btn btn-sm btn-success" >
+                                                    <h:commandButton action="#{periodoBean.crear}" value="#{msgs['periodo.crear']}" class="btn btn-sm btn-success" >
                                                     </h:commandButton>
                                                 </div>
                                             </div>
+                                            <h:dataTable var="periodo" value="#{periodoBean.periodos}" >
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        Id Perido
+                                                    </f:facet>
+                                                    #{periodo.idPeriodo}
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        Nombre Perido
+                                                    </f:facet>
+                                                    #{periodo.nombre}
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        Fecha Inicial
+                                                    </f:facet>
+                                                    #{periodo.fechainicial}
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        fecha Final
+                                                    </f:facet>
+                                                    #{periodo.fechafinal}
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        Activo
+                                                    </f:facet>
+                                                    #{periodo.activo}
+                                                </h:column>
+
+                                            </h:dataTable>
 
                                             <h:dataTable value="#{periodoBean.periodos}" var="periodo" class="table w-100 table-hover">
                                                 <h:column class="col-id">

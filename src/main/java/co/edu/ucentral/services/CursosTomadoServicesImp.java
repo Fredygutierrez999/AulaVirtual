@@ -11,17 +11,16 @@ import javax.inject.Inject;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Adolfo
  */
 @Stateless
-public class CursosTomadoServicesImp implements CursosTomadoService{
+public class CursosTomadoServicesImp implements CursosTomadoService {
 
     @Inject
     private CursosTomadosDAO cursoTomadosDAO;
-    
+
     @Override
     public List<CursosTomados> listadoCursosTomados() {
         return cursoTomadosDAO.listCursosTomados();
@@ -29,7 +28,7 @@ public class CursosTomadoServicesImp implements CursosTomadoService{
 
     @Override
     public CursosTomados clasePorId(CursosTomados cursosTomados) {
-        return  cursoTomadosDAO.findByCursosTomados(cursosTomados);
+        return cursoTomadosDAO.findByCursosTomados(cursosTomados);
     }
 
     @Override
@@ -39,7 +38,7 @@ public class CursosTomadoServicesImp implements CursosTomadoService{
 
     @Override
     public void modificarCursosTomado(CursosTomados cursosTomados) {
-      cursoTomadosDAO.updateCursosTomados(cursosTomados);
+        cursoTomadosDAO.updateCursosTomados(cursosTomados);
     }
 
     @Override
@@ -47,6 +46,4 @@ public class CursosTomadoServicesImp implements CursosTomadoService{
         cursoTomadosDAO.deleteCursosTomados(cursosTomados);
     }
 
-    
-    
 }

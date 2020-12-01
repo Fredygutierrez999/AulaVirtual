@@ -6,6 +6,10 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <h:outputScript name="bootstrap/js/bootstrap.min.js" />
+
         <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script id="ga-gtag" type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-38417733-31"></script>
         <meta charset="utf-8">
@@ -827,7 +831,6 @@
                 color: #fff;
             }
         </style>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <h:outputStylesheet name="styles/theme.css"/>
         <h:outputStylesheet name="styles/site.css"/>
         <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous"/>
@@ -845,7 +848,6 @@
         </style>
         <style>.btn-customizer[_ngcontent-myx-c10]{display:-webkit-box;display:flex;width:100%;-webkit-box-pack:justify;justify-content:space-between;-webkit-box-align:center;align-items:center;border-radius:.35rem;font-size:.85rem;padding:1rem;outline:0;margin-bottom:.5rem}.btn-customizer[_ngcontent-myx-c10]   svg[_ngcontent-myx-c10]{visibility:hidden}.btn-customizer[_ngcontent-myx-c10]:focus{font-weight:700;box-shadow:0 0 0 .125rem #d7dce3}.btn-customizer[_ngcontent-myx-c10]:focus   svg[_ngcontent-myx-c10]{visibility:visible}.sb-customizer-btn-export[_ngcontent-myx-c10]{font-size:.85rem;padding:1rem}.sb-customizer-btn-export[_ngcontent-myx-c10]   .ng-fa-icon[_ngcontent-myx-c10]{margin-right:.25rem}.sb-customizer[_ngcontent-myx-c10]{z-index:9999;position:fixed;top:0;width:20rem;height:100vh;text-align:left;background:#fff;-webkit-transition:right .5s;transition:right .5s;box-shadow:-.15rem 0 1.75rem 0 rgba(34,39,46,.15)}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-heading[_ngcontent-myx-c10]{padding:1.5rem;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#a7aeb8}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-subheading[_ngcontent-myx-c10]{font-size:.8rem;font-style:italic;color:#6c737d;margin-bottom:.75rem}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-toggler[_ngcontent-myx-c10]{position:absolute;top:4.625rem;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;left:-3rem;width:3rem;height:3rem;border:0;box-shadow:0 .15rem 1.75rem 0 rgba(34,39,46,.15);color:#001500;background-color:#fff;border-radius:.35rem 0 0 .35rem}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-toggler[_ngcontent-myx-c10]:focus{outline:0}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]{position:relative;height:calc(100% - 64px);overflow-y:auto;padding:1.5rem}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]::-webkit-scrollbar{display:block;width:.5rem}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]::-webkit-scrollbar-thumb{background-color:#c7cdd6;border-radius:10rem;height:3em;background-clip:padding-box;border:.1rem solid transparent}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]::-webkit-scrollbar-track{background-color:rgba(34,39,46,.05)}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]::-webkit-scrollbar-button{width:0;height:0;display:none}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]::-webkit-scrollbar-corner{background-color:transparent}.sb-customizer[_ngcontent-myx-c10]   .sb-customizer-content[_ngcontent-myx-c10]:hover::-webkit-scrollbar{display:block}.sb-customizer.sb-customizer-closed[_ngcontent-myx-c10]{right:-20rem}.sb-customizer.sb-customizer-open[_ngcontent-myx-c10]{right:0}.swatch[_ngcontent-myx-c10]{border:0}#swatch1[_ngcontent-myx-c10]   .swatch[_ngcontent-myx-c10]{color:#fff;background-color:#0061f2;background-image:linear-gradient(45deg,#0061f2,#6900c7)}#swatch2[_ngcontent-myx-c10]   .swatch[_ngcontent-myx-c10]{color:#fff;background-color:#1da1f5;background-image:linear-gradient(45deg,#1da1f5,#8039da)}#swatch3[_ngcontent-myx-c10]   .swatch[_ngcontent-myx-c10]{color:#fff;background-color:#f53b57;background-image:linear-gradient(45deg,#f53b57,#ff793f)}#swatch4[_ngcontent-myx-c10]   .swatch[_ngcontent-myx-c10]{color:#fff;background-color:#6eabc2;background-image:linear-gradient(45deg,#6eabc2,#506c6a)}#swatch5[_ngcontent-myx-c10]   .swatch[_ngcontent-myx-c10]{color:#fff;background-color:#06794f;background-image:linear-gradient(45deg,#06794f,#0fa28b)}.sb-customizer-notice[_ngcontent-myx-c10]{line-height:1.1;font-style:italic}</style>
         <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     </h:head>
     <h:body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
@@ -859,7 +861,7 @@
                     </font>
                 </a>
             </h:form>
-            
+
             <h:form class="form-inline mr-auto d-none d-md-block mr-3">
                 <div class="input-group input-group-joined input-group-solid">
                     <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
@@ -896,8 +898,8 @@
                         </form>
                     </div>
                 </li>
-                
-                
+
+
                 <!-- User Dropdown-->
                 <li class="nav-item dropdown no-caret mr-3 mr-lg-0 dropdown-user">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -920,7 +922,7 @@
                                 <div class="sidenav-menu-heading d-sm-none">Account</div>
                                 <!-- Sidenav Link (Alerts)-->
                                 <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                                
+
                                 <!-- Sidenav Menu Heading (Core)-->
                                 <div class="sidenav-menu-heading">
                                     <font style="vertical-align: inherit;">
@@ -932,7 +934,7 @@
                                 
                                 <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Favoritos/consultarmiscursos.xhtml" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                     <div class="nav-link-icon">
-                                        
+
                                     </div>
                                     <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                             #{msgs['menu.miscursos']} 
@@ -946,11 +948,11 @@
                                 </a>
                                 <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Favoritos/todosloscursos.xhtml" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                     <div class="nav-link-icon">
-                                        
+
                                     </div>
                                     <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                             #{msgs['menu.todoscursos']} 
-                                            
+
                                         </font></font>
                                     <div class="sidenav-collapse-arrow">
                                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img"  viewBox="0 0 320 512" data-fa-i2svg="">

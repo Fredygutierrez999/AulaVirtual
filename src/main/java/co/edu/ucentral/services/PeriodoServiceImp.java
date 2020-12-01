@@ -16,11 +16,11 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class PeriodoServiceImp implements PeriodoService{
+public class PeriodoServiceImp implements PeriodoService {
 
     @Inject
     private PeriodoDAO peridoDAO;
-    
+
     @Override
     public List<Periodo> listadoPeriodo() {
         return peridoDAO.listPeriodo();
@@ -45,5 +45,5 @@ public class PeriodoServiceImp implements PeriodoService{
     public void eliminarPeriodo(Periodo periodo) {
         peridoDAO.deletePeriodo(periodo);
     }
-    
+
 }

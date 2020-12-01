@@ -16,19 +16,19 @@ import javax.persistence.PersistenceContext;
  * @author Adolfo
  */
 @Stateless
-public class PeriodoDAOImp  implements PeriodoDAO{
+public class PeriodoDAOImp implements PeriodoDAO {
 
     @PersistenceContext(unitName = "AulaWeb")
     private EntityManager em;
 
     @Override
     public List<Periodo> listPeriodo() {
-       return em.createNamedQuery("Periodo.findAll", Periodo.class).getResultList();
+        return em.createNamedQuery("Periodo.findAll", Periodo.class).getResultList();
     }
 
     @Override
     public Periodo findByPeriodo(Periodo periodo) {
-        return em.find(Periodo.class,periodo.getIdPeriodo());
+        return em.find(Periodo.class, periodo.getIdPeriodo());
     }
 
     @Override

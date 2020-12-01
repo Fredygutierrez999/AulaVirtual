@@ -16,19 +16,19 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class ClaseServiceImp implements ClaseService{
+public class ClaseServiceImp implements ClaseService {
 
     @Inject
     private ClaseDao claseDAO;
-    
+
     @Override
     public List<Clase> listadoClase() {
-        return  claseDAO.listClase();
+        return claseDAO.listClase();
     }
 
     @Override
     public Clase clasePorId(Clase clase) {
-       return claseDAO.findByCurso(clase);
+        return claseDAO.findByCurso(clase);
     }
 
     @Override
@@ -38,12 +38,12 @@ public class ClaseServiceImp implements ClaseService{
 
     @Override
     public void modificarClase(Clase clase) {
-       claseDAO.updateCurso(clase);
+        claseDAO.updateCurso(clase);
     }
 
     @Override
     public void eliminarClase(Clase clase) {
-       claseDAO.deleteCurso(clase);
+        claseDAO.deleteCurso(clase);
     }
-    
+
 }

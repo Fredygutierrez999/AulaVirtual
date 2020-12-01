@@ -13,9 +13,14 @@ import java.util.List;
  * @author Adolfo
  */
 public interface ResultadoRespuestaDAO {
+
     public List<ResultadoRespuesta> listResultado();
+
     public ResultadoRespuesta findByResultadoRespuesta(ResultadoRespuesta resultadoRespuesta);
+
     public void insertResultadoRespuesta(ResultadoRespuesta resultadoRespuesta);
+
     public void updateResultadoRespuesta(ResultadoRespuesta resultadoRespuesta);
+
     public void deleteResultadoRespuesta(ResultadoRespuesta resultadoRespuesta);
 }

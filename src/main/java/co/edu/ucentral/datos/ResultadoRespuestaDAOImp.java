@@ -12,9 +12,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class ResultadoRespuestaDAOImp implements ResultadoRespuestaDAO{
+public class ResultadoRespuestaDAOImp implements ResultadoRespuestaDAO {
 
-   @PersistenceContext(unitName = "AulaWeb")
+    @PersistenceContext(unitName = "AulaWeb")
 
     private EntityManager em;
 

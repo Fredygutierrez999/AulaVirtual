@@ -16,7 +16,7 @@ import javax.inject.Inject;
  * @author Adolfo
  */
 @Stateless
-public class UsuarioServiceImpl implements UsuarioService{
+public class UsuarioServiceImpl implements UsuarioService {
 
     @Inject
     private UsuarioDAO usuarioDAO;
@@ -48,7 +48,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public Usuario usuarioPorClave(Usuario usuario) {
-        return  usuarioDAO.findByUserAndPassword(usuario);
+        return usuarioDAO.findByUserAndPassword(usuario);
     }
-    
+
 }

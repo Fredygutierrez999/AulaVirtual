@@ -15,9 +15,14 @@ import javax.ejb.Local;
  */
 @Local
 public interface RespuestaService {
+
     public List<Respuesta> listadoRespuesta();
+
     public Respuesta respuestaPorId(Respuesta respuesta);
+
     public void guardarRespuesta(Respuesta respuesta);
+
     public void modificarRespuesta(Respuesta respuesta);
-    public void eliminarRespuesta(Respuesta respuesta);    
+
+    public void eliminarRespuesta(Respuesta respuesta);
 }

@@ -145,5 +145,5 @@ public class Periodo implements Serializable {
     public String toString() {
         return "co.edu.ucentral.mavenproject2.Periodo[ idPeriodo=" + idPeriodo + " ]";
     }
-    
+
 }

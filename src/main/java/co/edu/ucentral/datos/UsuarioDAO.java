@@ -15,9 +15,14 @@ import java.util.List;
 public interface UsuarioDAO {
 
     public List<Usuario> listUser();
+
     public Usuario findByUser(Usuario usuario);
+
     public void insertUser(Usuario usuario);
+
     public void updateUser(Usuario usuario);
+
     public void deleteUser(Usuario usuario);
+
     public Usuario findByUserAndPassword(Usuario usuario);
 }

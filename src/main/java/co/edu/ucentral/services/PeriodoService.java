@@ -15,9 +15,14 @@ import javax.ejb.Local;
  */
 @Local
 public interface PeriodoService {
+
     public List<Periodo> listadoPeriodo();
+
     public Periodo periodoPorId(Periodo periodo);
+
     public void guardarPeriodo(Periodo periodo);
+
     public void modificarPeriodo(Periodo periodo);
-    public void eliminarPeriodo(Periodo periodo);     
+
+    public void eliminarPeriodo(Periodo periodo);
 }
