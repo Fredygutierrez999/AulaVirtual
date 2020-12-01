@@ -13,6 +13,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import co.edu.ucentral.models.Rol;
 import co.edu.ucentral.services.RolService;
+import javax.faces.annotation.ManagedProperty;
+import org.primefaces.PrimeFaces;
 
 @Named("rolBean")
 @RequestScoped
@@ -23,10 +25,19 @@ public class RolBean {
     private Rol rol;
     private List<Rol> roles;
     private String funcionalidad;
+    @Inject
+    @ManagedProperty(value = "#{usuarioBean}")
+    private UsuarioBean usuariologin;
 
     @PostConstruct
     public void inicializar() {
-        this.roles = this.rolService.listadoRol();
+        if (usuariologin.getUsuario().getNombre() != null) {
+            this.roles = this.rolService.listadoRol();
+        } else {
+            usuariologin.setMensaje("Usuario no autorizado");
+            PrimeFaces pf = PrimeFaces.current();
+            pf.executeScript("$('#modal').modal('show')");
+        }
     }
 
     public RolBean() {
@@ -82,6 +93,10 @@ public class RolBean {
 
     public void setRoles(List<Rol> roles) {
         this.roles = roles;
+    }
+
+    public UsuarioBean getUsuariologin() {
+        return usuariologin;
     }
 
 }

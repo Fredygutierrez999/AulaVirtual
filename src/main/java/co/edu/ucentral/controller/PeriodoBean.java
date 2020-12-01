@@ -7,15 +7,12 @@ package co.edu.ucentral.controller;
 
 import co.edu.ucentral.models.Periodo;
 import co.edu.ucentral.services.PeriodoService;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 
 import javax.faces.annotation.ManagedProperty;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.primefaces.PrimeFaces;
