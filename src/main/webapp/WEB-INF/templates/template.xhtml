@@ -833,9 +833,9 @@
         </style>
         <h:outputStylesheet name="styles/theme.css"/>
         <h:outputStylesheet name="styles/site.css"/>
+        <link rel="icon" type="image/x-icon" href="resources/imagenes/icono.png"/>
         <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous"/>
         <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" crossorigin="anonymous"/>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png"/>
         <script data-search-pseudo-elements="" defer="" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
         <style type="text/css">/* Chart.js */
@@ -903,7 +903,7 @@
                 <!-- User Dropdown-->
                 <li class="nav-item dropdown no-caret mr-3 mr-lg-0 dropdown-user">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="img-fluid" src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png"></img>
+                        <img class="img-fluid" src="${usuarioBean.usuario.fotoPerfil}"></img>
                     </a>
                 </li>
             </ul>
@@ -931,7 +931,7 @@
                                         </font>
                                     </font>
                                 </div>
-                                
+
                                 <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Favoritos/consultarmiscursos.xhtml" data-toggle="collapse" data-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                     <div class="nav-link-icon">
 
@@ -962,76 +962,81 @@
                                     </div>
                                 </a>
 
-
-                                <!-- Sidenav Heading (App Views)-->
-                                <div class="sidenav-menu-heading">
-                                    <font style="vertical-align: inherit;">
+                                <c:if test="${usuarioBean.usuario.rol.idRol == 3 || usuarioBean.usuario.rol.idRol == 2}">
+                                    <!-- Sidenav Heading (App Views)-->
+                                    <div class="sidenav-menu-heading">
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.confapp']}   
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.confapp']}   
+                                            </font>
                                         </font>
-                                    </font>
-                                </div>
-                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/usuario/consultar.xhtml" aria-expanded="false">
-                                    <div class="nav-link-icon">
-                                        <span class="fa fa-user"></span>
                                     </div>
-                                    <font style="vertical-align: inherit;">
+                                </c:if>
+                                <c:if test="${usuarioBean.usuario.rol.idRol == 3}">
+                                    <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/usuario/consultar.xhtml" aria-expanded="false">
+                                        <div class="nav-link-icon">
+                                            <span class="fa fa-user"></span>
+                                        </div>
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.usuario']}
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.usuario']}
+                                            </font>
                                         </font>
-                                    </font>
-                                </a>
-                                <!-- Sidenav Accordion (Pages)-->
-                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Rol/consultar.xhtml" aria-expanded="false">
-                                    <div class="nav-link-icon">
-                                        <span class="fa fa-users"></span>
-                                    </div>
-                                    <font style="vertical-align: inherit;">
+                                    </a>
+                                    <!-- Sidenav Accordion (Pages)-->
+                                    <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Rol/consultar.xhtml" aria-expanded="false">
+                                        <div class="nav-link-icon">
+                                            <span class="fa fa-users"></span>
+                                        </div>
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.roles']}
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.roles']}
+                                            </font>
                                         </font>
-                                    </font>
-                                </a>
-                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Facultad/consultar.xhtml" aria-expanded="false">
-                                    <div class="nav-link-icon">
-                                        <span class="fa fa-graduation-cap"></span>
-                                    </div>
-                                    <font style="vertical-align: inherit;">
+                                    </a>
+                                    <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Facultad/consultar.xhtml" aria-expanded="false">
+                                        <div class="nav-link-icon">
+                                            <span class="fa fa-graduation-cap"></span>
+                                        </div>
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.facultades']}
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.facultades']}
+                                            </font>
                                         </font>
-                                    </font>
-                                </a>
-                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Departamento/consultar.xhtml" aria-expanded="false">
-                                    <div class="nav-link-icon">
-                                        <span class="fa fa-object-group"></span>
-                                    </div>
-                                    <font style="vertical-align: inherit;">
+                                    </a>
+                                    <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Departamento/consultar.xhtml" aria-expanded="false">
+                                        <div class="nav-link-icon">
+                                            <span class="fa fa-object-group"></span>
+                                        </div>
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.departamento']}
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.departamento']}
+                                            </font>
                                         </font>
-                                    </font>
-                                </a>
-                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Periodo/consultar.xhtml" aria-expanded="false">
-                                    <div class="nav-link-icon">
-                                        <span class="fa fa-calendar"></span>
-                                    </div>
-                                    <font style="vertical-align: inherit;">
+                                    </a>
+                                    <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Periodo/consultar.xhtml" aria-expanded="false">
+                                        <div class="nav-link-icon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.periodos']}
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.periodos']}
+                                            </font>
                                         </font>
-                                    </font>
-                                </a>
-                                <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Curso/consultar.xhtml" aria-expanded="false">
-                                    <div class="nav-link-icon">
-                                        <span class="fa fa-book"></span>
-                                    </div>
-                                    <font style="vertical-align: inherit;">
+                                    </a>
+                                </c:if>
+                                <c:if test="${usuarioBean.usuario.rol.idRol == 3 || usuarioBean.usuario.rol.idRol == 2}">
+                                    <a class="nav-link collapsed" href="/AulaVirtual/faces/pages/Curso/consultar.xhtml" aria-expanded="false">
+                                        <div class="nav-link-icon">
+                                            <span class="fa fa-book"></span>
+                                        </div>
                                         <font style="vertical-align: inherit;">
-                                            #{msgs['menu.cursos']}
+                                            <font style="vertical-align: inherit;">
+                                                #{msgs['menu.cursos']}
+                                            </font>
                                         </font>
-                                    </font>
-                                </a>
+                                    </a>
+                                </c:if>
 
 
                             </div>
@@ -1039,10 +1044,31 @@
                         <!-- Sidenav Footer-->
                         <div class="sidenav-footer">
                             <div class="sidenav-footer-content">
-                                <div class="sidenav-footer-subtitle"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conectado como:</font></font></div>
-                                <div class="sidenav-footer-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Valerie Luna</font></font></div>
+                                <div class="sidenav-footer-subtitle">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Conectado como:
+                                        </font>
+                                    </font>
+                                </div>
+                                <div class="sidenav-footer-title">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            ${usuarioBean.usuario.nombre}
+                                        </font>
+                                    </font>
+                                </div>
+                                <div class="sidenav-footer-subtitle">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            <h:commandButton action="#{usuarioBean.cerrarSesion()}" class="btn btn-success btn-sm w-100" value="Cerrar sesión">
+                                            </h:commandButton>
+                                        </font>
+                                    </font>
+                                </div>
                             </div>
                         </div>
+
                     </nav>
                 </h:form>
             </div>

@@ -56,7 +56,7 @@ public class UsuarioBean implements Serializable {
         Usuario tmp = new Usuario();
         tmp = this.usuarioService.usuarioPorClave(usuario);
         if (tmp != null) {
-            usuario = tmp;
+            this.usuario = tmp;
             return "index";
         } else {
             if (tmp == null) {
@@ -69,6 +69,11 @@ public class UsuarioBean implements Serializable {
             }
         }
 
+        return "login";
+    }
+    
+    public String cerrarSesion(){
+        this.usuario = null;
         return "login";
     }
 
