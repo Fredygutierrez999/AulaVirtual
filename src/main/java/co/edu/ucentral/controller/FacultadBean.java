@@ -15,6 +15,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import co.edu.ucentral.services.FacultadService;
 import java.io.Serializable;
+import javax.faces.annotation.ManagedProperty;
+import org.primefaces.PrimeFaces;
 
 @Named("facultadBean")
 @RequestScoped
@@ -26,10 +28,19 @@ public class FacultadBean implements Serializable {
     private Facultad facultad;
     private List<Facultad> facultades;
     private String funcionalidad;
+    @Inject
+    @ManagedProperty(value = "#{usuarioBean}")
+    private UsuarioBean usuariologin;
 
     @PostConstruct
     public void inicializar() {
-        this.facultades = this.facultadService.listadoFacultad();
+        if (usuariologin.getUsuario().getNombre() != null) {
+            this.facultades = this.facultadService.listadoFacultad();
+        } else {
+            usuariologin.setMensaje("Usuario no autorizado");
+            PrimeFaces pf = PrimeFaces.current();
+            pf.executeScript("$('#modal').modal('show')");
+        }
     }
 
     public FacultadBean() {
@@ -78,6 +89,10 @@ public class FacultadBean implements Serializable {
 
     public void setFacultades(List<Facultad> facultades) {
         this.facultades = facultades;
+    }
+
+    public UsuarioBean getUsuariologin() {
+        return usuariologin;
     }
 
 }

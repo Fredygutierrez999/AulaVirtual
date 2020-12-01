@@ -30,6 +30,8 @@ import co.edu.ucentral.services.UsuarioService;
 import java.io.Serializable;
 import java.util.Date;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.annotation.ManagedProperty;
+import org.primefaces.PrimeFaces;
 
 @Named("cursoBean")
 @SessionScoped
@@ -67,14 +69,24 @@ public class CursoBean implements Serializable {
     private List<Respuesta> respuestasPregunta;
     private int notaPregunta;
     private int IdEvaluacion;
+    @Inject
+    @ManagedProperty(value = "#{usuarioBean}")
+    private UsuarioBean usuariologin;
 
     @PostConstruct
     public void inicializar() {
-        this.cursos = this.cursoService.listadoCurso();
-        this.departamentos = this.departamentoService.listadoDepartamento();
-        Rol rolProfesor = this.rolService.rolPorId(new Rol(2));
-        this.usuarios = rolProfesor.getUsuarioList();
-        this.notaPregunta = 0;
+        if (usuariologin.getUsuario().getNombre() != null) {
+            this.cursos = this.cursoService.listadoCurso();
+            this.departamentos = this.departamentoService.listadoDepartamento();
+            Rol rolProfesor = this.rolService.rolPorId(new Rol(2));
+            this.usuarios = rolProfesor.getUsuarioList();
+            this.notaPregunta = 0;
+        } else {
+            usuariologin.setMensaje("Usuario no autorizado");
+            PrimeFaces pf = PrimeFaces.current();
+            pf.executeScript("$('#modal').modal('show')");
+        }
+
     }
 
     public CursoBean() {
@@ -179,7 +191,7 @@ public class CursoBean implements Serializable {
             }
         }
         this.evaluacionService.updateEvaluacion(evaluacion);
-        this.evaluacion =  this.evaluacionService.findByEvaluacion(new Evaluacion(this.IdEvaluacion));
+        this.evaluacion = this.evaluacionService.findByEvaluacion(new Evaluacion(this.IdEvaluacion));
         return this.funcionalidad + "Evaluacion";
     }
 
@@ -192,11 +204,10 @@ public class CursoBean implements Serializable {
             this.evaluacion.getPreguntaList().add(pregunta);
         }
         this.evaluacionService.updateEvaluacion(evaluacion);
-        this.evaluacion =  this.evaluacionService.findByEvaluacion(new Evaluacion(this.IdEvaluacion));
+        this.evaluacion = this.evaluacionService.findByEvaluacion(new Evaluacion(this.IdEvaluacion));
         return this.funcionalidad + "Evaluacion";
     }
 
-    
     public String removerRespuesta(int Id) {
         for (int i = 0; i < this.pregunta.getRespuestaList().size(); i++) {
             if (this.pregunta.getRespuestaList().get(i).getIdRespuesta() == Id) {
@@ -351,5 +362,14 @@ public class CursoBean implements Serializable {
     public void setIdEvaluacion(int IdEvaluacion) {
         this.IdEvaluacion = IdEvaluacion;
     }
+
+    public UsuarioBean getUsuariologin() {
+        return usuariologin;
+    }
+
+    public UsuarioService getUsuarioService() {
+        return usuarioService;
+    }
+    
 
 }

@@ -75,40 +75,6 @@
                                                     </h:commandButton>
                                                 </div>
                                             </div>
-                                            <h:dataTable var="periodo" value="#{periodoBean.periodos}" >
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        Id Perido
-                                                    </f:facet>
-                                                    #{periodo.idPeriodo}
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        Nombre Perido
-                                                    </f:facet>
-                                                    #{periodo.nombre}
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        Fecha Inicial
-                                                    </f:facet>
-                                                    #{periodo.fechainicial}
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        fecha Final
-                                                    </f:facet>
-                                                    #{periodo.fechafinal}
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        Activo
-                                                    </f:facet>
-                                                    #{periodo.activo}
-                                                </h:column>
-
-                                            </h:dataTable>
-
                                             <h:dataTable value="#{periodoBean.periodos}" var="periodo" class="table w-100 table-hover">
                                                 <h:column class="col-id">
                                                     <f:facet name="header">#{msgs['periodo.id']}</f:facet>
