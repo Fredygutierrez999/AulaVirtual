@@ -33,15 +33,16 @@ public class PeriodoBean {
 
     @PostConstruct
     public void inicializar() throws UnsupportedOperationException {
-        //if (usuariologin.getUsuario().getNombre() != null) {
-         //   periodos = new ArrayList<>();
+        if (usuariologin.getUsuario().getNombre() != null) {
+            System.out.println("usuaiologin.getUsuario = " + usuariologin.getUsuario());
+            periodos = new ArrayList<>();
             periodos = periodoService.listadoPeriodo();
             periodo = new Periodo();
-        //} else {
-        //    setMensaje("Usuario no autorizado");
-        //    PrimeFaces pf = PrimeFaces.current();
-        //   pf.executeScript("$('#modal').modal('show')");
-        //}
+        } else {
+            setMensaje("Usuario no autorizado");
+            PrimeFaces pf = PrimeFaces.current();
+            pf.executeScript("$('#modal').modal('show')");
+        }
     }
 
     public void PeriodoBean() {
@@ -66,6 +67,11 @@ public class PeriodoBean {
             this.periodoService.modificarPeriodo(periodo);
         }
         return this.funcionalidad + "Consultar";
+    }
+    
+    public String crear() {
+        this.periodo = new Periodo();
+        return this.funcionalidad + "Crear";
     }
 
     public Periodo getPeriodo() {
@@ -92,10 +98,6 @@ public class PeriodoBean {
         this.funcionalidad = funcionalidad;
     }
 
-    public String crear() {
-        return "editar";
-    }
-
     public String login() {
 
         return "login";
@@ -109,4 +111,10 @@ public class PeriodoBean {
         this.mensaje = mensaje;
     }
 
+    public String eliminar(Integer idPeriodo) {
+        Periodo p = periodoService.periodoPorId(new Periodo(idPeriodo));
+        this.periodoService.eliminarPeriodo(p);
+        this.periodos = this.periodoService.listadoPeriodo();
+        return this.funcionalidad + "Consultar";
+    }
 }
