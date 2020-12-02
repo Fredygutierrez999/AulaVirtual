@@ -71,21 +71,19 @@
                                                 </div>
 
                                                 <ol>
-                                                    <ui:repeat var="pregunta" value="#{cursosTomadosBean.evaluacion.preguntaList}" >
-                                                        <li>
-                                                            #{pregunta.nombre}
-                                                            <ul>
-                                                               
-                                                            </ul>
-                                                        </li>
+                                                    <ui:repeat var="pregunta" value="#{cursosTomadosBean.pregunta}" >
+
+                                                        
+                                                        <h:outputLabel for="pregunta" class="control-label col-4" value="#{pregunta.nombre}"  />
+                                                        
                                                     </ui:repeat>
                                                 </ol>
 
                                             </div>
-                                            
+
                                             <div class="row w-100">
                                                 <div class="col-md-5">
-                                                    
+
                                                 </div>
                                                 <div class="col-md-2">
                                                     <h:commandButton class="btn btn-sm btn-success" value="Finalizar" action="#{cursoTomadosBean.realizarEvaluacion(cursosTomadosBean.cursoTomado.idCursosTomados)}" ></h:commandButton>

@@ -40,7 +40,7 @@ public class UsuarioBean implements Serializable {
     private boolean espaniol;
     private boolean ingles;
     private String mensaje;
-    private boolean idioma;
+    private Boolean idioma;
     @PostConstruct
     public void inicializar() {
         this.roles = this.rolService.listadoRol();
@@ -60,6 +60,7 @@ public class UsuarioBean implements Serializable {
         tmp = this.usuarioService.usuarioPorClave(usuario);
         if (tmp != null) {
             this.usuario = tmp;
+            validarIdioma();
             return "index";
         } else {
             if (tmp == null) {
@@ -182,14 +183,14 @@ public class UsuarioBean implements Serializable {
         this.ingles = ingles;
     }
 
-    public boolean isIdioma() {
+    public Boolean getIdioma() {
         return idioma;
     }
 
-    public void setIdioma(boolean idioma) {
+    public void setIdioma(Boolean idioma) {
         this.idioma = idioma;
     }
-    
+
     
     
 }

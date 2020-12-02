@@ -9,11 +9,15 @@ import co.edu.ucentral.models.Curso;
 import co.edu.ucentral.models.CursosTomados;
 import co.edu.ucentral.models.Evaluacion;
 import co.edu.ucentral.models.Periodo;
+import co.edu.ucentral.models.Pregunta;
+import co.edu.ucentral.models.Respuesta;
+import co.edu.ucentral.models.ResultadoRespuesta;
 import co.edu.ucentral.models.Rol;
 import co.edu.ucentral.services.CursoService;
 import co.edu.ucentral.services.CursosTomadoService;
 import co.edu.ucentral.services.EvaluacionService;
 import co.edu.ucentral.services.PeriodoService;
+import co.edu.ucentral.services.RespuestaService;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -45,7 +49,8 @@ public class CursosTomadosBean implements Serializable {
     private PeriodoService periodoService;
     @Inject
     private EvaluacionService evaluacionService;
-
+    @Inject
+    private RespuestaService respuestaService;
     private CursosTomados cursoTomado;
     private List<Curso> cursosdisponibles;
     private List<CursosTomados> cursostomados;
@@ -54,7 +59,8 @@ public class CursosTomadosBean implements Serializable {
     private String mensaje;
     private CursosTomados cursoEvaluacion;
     private Evaluacion evaluacion;
-
+    private List<Respuesta> respuesta;
+    private int idpregunta;
     @Inject
     @ManagedProperty(value = "#{usuarioBean}")
     private UsuarioBean usuariologin;
@@ -189,6 +195,24 @@ public class CursosTomadosBean implements Serializable {
         this.evaluacion = evaluacion;
     }
 
+    public int getIdpregunta() {
+        return idpregunta;
+    }
+
+    public void setIdpregunta(int idpregunta) {
+        this.idpregunta = idpregunta;
+    }
+
+    public List<Pregunta> getPregunta() {
+        
+        return evaluacion.getPreguntaList();
+    }
+
+//    public List<Respuesta> resultadoRespuestaList(int idpregunta){
+//        respuesta = respuestaService.respuestaPorId(new Res);
+//        return respuesta;
+//    }
+    
     
     
 }

@@ -215,6 +215,7 @@
     <application>
         <locale-config>
             <default-locale>es</default-locale>
+            <supported-locale>en</supported-locale>
         </locale-config>
         <resource-bundle>
             <base-name>mensajes</base-name>
