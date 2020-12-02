@@ -51,6 +51,8 @@ public class UsuarioBean implements Serializable {
         usuarios = new ArrayList<>();
         usuario = new Usuario();
         this.funcionalidad = "usuario";
+        this.espaniol = true;
+        this.ingles = false;
     }
     
     public String validarUsuario() {
@@ -147,16 +149,9 @@ public class UsuarioBean implements Serializable {
     }
     
     public void validarIdioma() {
-        PrimeFaces pf = PrimeFaces.current();
-        pf.executeScript("aler('idioma')");
-        if (idioma) {
-             pf.executeScript("aler('ingles')");
+        if (!idioma) {
             FacesContext.getCurrentInstance().getApplication().setDefaultLocale(Locale.ENGLISH);
-        } else {
-            
-            pf.executeScript("aler(' espaniol ')");
         }
-        
     }
 
     public String getMensaje() {

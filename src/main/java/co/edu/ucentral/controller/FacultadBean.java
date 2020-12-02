@@ -34,6 +34,7 @@ public class FacultadBean implements Serializable {
 
     @PostConstruct
     public void inicializar() {
+        usuariologin.validarIdioma();
         if (usuariologin.getUsuario().getNombre() != null) {
             this.facultades = this.facultadService.listadoFacultad();
         } else {

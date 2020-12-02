@@ -31,6 +31,7 @@ public class RolBean {
 
     @PostConstruct
     public void inicializar() {
+        usuariologin.validarIdioma();
         if (usuariologin.getUsuario().getNombre() != null) {
             this.roles = this.rolService.listadoRol();
         } else {

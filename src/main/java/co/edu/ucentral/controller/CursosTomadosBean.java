@@ -61,6 +61,7 @@ public class CursosTomadosBean implements Serializable {
 
     @PostConstruct
     public void inicializar() {
+        usuariologin.validarIdioma();
         if (usuariologin.getUsuario().getNombre() != null) {
             this.cursosdisponibles = this.cursoService.listadoCurso();
             this.cursostomados = this.cursosTomadoService.listCursosTomadosPorUsuario(usuariologin.getUsuario());

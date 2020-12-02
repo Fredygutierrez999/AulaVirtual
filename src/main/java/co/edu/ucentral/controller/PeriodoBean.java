@@ -33,6 +33,7 @@ public class PeriodoBean {
 
     @PostConstruct
     public void inicializar() throws UnsupportedOperationException {
+        usuariologin.validarIdioma();
         if (usuariologin.getUsuario().getNombre() != null) {
             System.out.println("usuaiologin.getUsuario = " + usuariologin.getUsuario());
             periodos = new ArrayList<>();

@@ -39,6 +39,7 @@ public class DepartamentoBean implements Serializable {
 
     @PostConstruct
     public void inicializar() {
+        usuariologin.validarIdioma();
         if (usuariologin.getUsuario().getNombre()!= null) {
             this.departamentos = this.departamentoService.listadoDepartamento();
             this.facultades = this.facultadService.getFacultades();
