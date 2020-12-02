@@ -46,4 +46,9 @@ public class CursoServiceImp implements CursoService {
         cursoDAO.deleteCurso(curso);
     }
 
+    @Override
+    public List<Curso> listCursosPorNombre(String nombre) {
+        return cursoDAO.listCursosPorNombre(nombre);
+    }
+    
 }

@@ -32,7 +32,10 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(name = "CursosTomados.findAll", query = "SELECT c FROM CursosTomados c"),
     @NamedQuery(name = "CursosTomados.findByIdCursosTomados", query = "SELECT c FROM CursosTomados c WHERE c.idCursosTomados = :idCursosTomados"),
-    @NamedQuery(name = "CursosTomados.findByNotaFinal", query = "SELECT c FROM CursosTomados c WHERE c.notaFinal = :notaFinal")})
+    @NamedQuery(name = "CursosTomados.findByNotaFinal", query = "SELECT c FROM CursosTomados c WHERE c.notaFinal = :notaFinal"),
+    @NamedQuery(name = "CursosTomados.findByIdUsuarios", query = "SELECT c FROM CursosTomados c WHERE c.idUsuarioEstudiante = :idUsuarioEstudiante"),
+    @NamedQuery(name = "CursosTomados.findByIdUsuariosYIdCurso", query = "SELECT c FROM CursosTomados c WHERE c.idUsuarioEstudiante = :idUsuarioEstudiante AND c.idCurso = :IdCurso")
+})
 public class CursosTomados implements Serializable {
 
     private static final long serialVersionUID = 1L;

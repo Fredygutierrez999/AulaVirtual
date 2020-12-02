@@ -23,4 +23,5 @@ public interface PreguntaDAO {
     public void updatePregunta(Pregunta pregunta);
 
     public void deletePregunta(Pregunta pregunta);
+    
 }

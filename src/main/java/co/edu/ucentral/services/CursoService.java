@@ -22,4 +22,6 @@ public interface CursoService {
     public void guardarCurso(Curso curso);
     public void modificarCurso(Curso curso);
     public void eliminarCurso(Curso curso);
+    public List<Curso> listCursosPorNombre(String nombre);
+    
 }

@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless
 public class CursoDAOImp implements CursoDAO {
@@ -21,6 +22,13 @@ public class CursoDAOImp implements CursoDAO {
     @Override
     public List<Curso> listCursos() {
         return em.createNamedQuery("Curso.findAll", Curso.class).getResultList();
+    }
+    
+    @Override
+    public List<Curso> listCursosPorNombre(String nombre) {
+        Query query = em.createNamedQuery("Curso.findByNombreLike");
+        query.setParameter("nombre", "%" + nombre + "%");
+        return (List<Curso>)query.getResultList();
     }
 
     @Override

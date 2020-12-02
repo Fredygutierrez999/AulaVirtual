@@ -38,28 +38,40 @@ public class PeriodoBean {
             periodos = new ArrayList<>();
             periodos = periodoService.listadoPeriodo();
             periodo = new Periodo();
-            this.funcionalidad = "periodo";
         } else {
             setMensaje("Usuario no autorizado");
             PrimeFaces pf = PrimeFaces.current();
             pf.executeScript("$('#modal').modal('show')");
-
         }
     }
 
-    public String editar(int idperiodo) {
-        this.periodo = this.periodoService.periodoPorId(new Periodo(idperiodo));
+    public void PeriodoBean() {
+        this.periodos = new ArrayList<>();
+        this.funcionalidad = "periodo";
+    }
+
+    public String editar(int IdPeriodo) {
+        periodo = this.periodoService.periodoPorId(new Periodo(IdPeriodo));
         return this.funcionalidad + "Editar";
     }
 
-    public String crear() {
-        this.periodo = new Periodo();
-        return this.funcionalidad + "Crear";
+    public String eliminar(int IdPeriodo) {
+        periodo = this.periodoService.periodoPorId(new Periodo(IdPeriodo));
+        return this.funcionalidad + "Consultar";
     }
 
     public String guardar() {
-        this.periodoService.guardarPeriodo(periodo);
+        if (periodo.getIdPeriodo() == 0) {
+            this.periodoService.guardarPeriodo(periodo);
+        } else {
+            this.periodoService.modificarPeriodo(periodo);
+        }
         return this.funcionalidad + "Consultar";
+    }
+    
+    public String crear() {
+        this.periodo = new Periodo();
+        return this.funcionalidad + "Crear";
     }
 
     public Periodo getPeriodo() {
@@ -100,7 +112,7 @@ public class PeriodoBean {
     }
 
     public String eliminar(Integer idPeriodo) {
-        Periodo p= periodoService.periodoPorId(new Periodo(idPeriodo));
+        Periodo p = periodoService.periodoPorId(new Periodo(idPeriodo));
         this.periodoService.eliminarPeriodo(p);
         this.periodos = this.periodoService.listadoPeriodo();
         return this.funcionalidad + "Consultar";

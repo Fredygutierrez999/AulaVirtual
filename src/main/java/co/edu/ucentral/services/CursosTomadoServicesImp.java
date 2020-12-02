@@ -1,7 +1,9 @@
 package co.edu.ucentral.services;
 
 import co.edu.ucentral.datos.CursosTomadosDAO;
+import co.edu.ucentral.models.Curso;
 import co.edu.ucentral.models.CursosTomados;
+import co.edu.ucentral.models.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -46,4 +48,13 @@ public class CursosTomadoServicesImp implements CursosTomadoService {
         cursoTomadosDAO.deleteCursosTomados(cursosTomados);
     }
 
+    @Override
+    public List<CursosTomados> listCursosTomadosPorUsuario(Usuario IdUsuario) {
+        return cursoTomadosDAO.listCursosTomadosPorUsuario(IdUsuario);
+    }
+
+    @Override
+    public List<CursosTomados> listCursosTomadosPorUsuarioYCurso(Usuario IdUsuario, Curso IdCurso) {
+        return cursoTomadosDAO.listCursosTomadosPorUsuarioYCurso(IdUsuario, IdCurso);
+    }
 }

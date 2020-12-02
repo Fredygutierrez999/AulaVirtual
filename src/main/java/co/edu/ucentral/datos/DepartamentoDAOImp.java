@@ -42,5 +42,6 @@ public class DepartamentoDAOImp implements DepartamentoDAO {
     public void deleteDepartamento(Departamento departamento) {
         em.remove(em.merge(departamento));
     }
+    
 
 }

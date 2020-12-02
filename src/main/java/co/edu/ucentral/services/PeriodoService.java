@@ -25,4 +25,6 @@ public interface PeriodoService {
     public void modificarPeriodo(Periodo periodo);
 
     public void eliminarPeriodo(Periodo periodo);
+    
+    public List<Periodo> listPeriodoPorEstado(boolean activo);
 }

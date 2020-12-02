@@ -23,4 +23,7 @@ public interface CursoDAO {
     public void updateCurso(Curso cursos);
 
     public void deleteCurso(Curso cursos);
+
+    public List<Curso> listCursosPorNombre(String nombre);
+
 }

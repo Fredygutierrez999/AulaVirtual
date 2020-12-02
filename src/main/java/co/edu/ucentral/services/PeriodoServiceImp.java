@@ -45,5 +45,11 @@ public class PeriodoServiceImp implements PeriodoService {
     public void eliminarPeriodo(Periodo periodo) {
         peridoDAO.deletePeriodo(periodo);
     }
+    
+    @Override
+    public List<Periodo> listPeriodoPorEstado(boolean activo){
+    return peridoDAO.listPeriodoPorEstado(activo);
+    }
+    
 
 }

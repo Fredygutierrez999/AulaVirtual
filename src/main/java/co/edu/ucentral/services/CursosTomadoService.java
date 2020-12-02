@@ -5,7 +5,9 @@
  */
 package co.edu.ucentral.services;
 
+import co.edu.ucentral.models.Curso;
 import co.edu.ucentral.models.CursosTomados;
+import co.edu.ucentral.models.Usuario;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -25,4 +27,8 @@ public interface CursosTomadoService {
     public void modificarCursosTomado(CursosTomados cursosTomados);
 
     public void eliminarCursosTomado(CursosTomados cursosTomados);
+    
+    public List<CursosTomados> listCursosTomadosPorUsuario(Usuario IdUsuario);
+    
+    public List<CursosTomados> listCursosTomadosPorUsuarioYCurso(Usuario IdUsuario, Curso IdCurso);
 }
