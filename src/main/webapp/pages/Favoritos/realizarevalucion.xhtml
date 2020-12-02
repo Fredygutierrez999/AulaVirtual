@@ -75,12 +75,7 @@
 
                                                         
                                                         <h:outputLabel for="pregunta" class="control-label col-4" value="#{pregunta.nombre}"  />
-                                                        <h:selectOneMenu id="pregunta" value="#{cursosTomadosBean.idpregunta}" class="form-control ">
-                                                            <f:selectItem itemLabel="seleccione...." itemValue="" noSelectionOption="true" />
-                                                            <f:selectItems value="#{cursosTomadosBean.resultadoRespuestaList(1)}" var="p" itemValue="#{p.idRespuesta}"  itemLabel="#{p.respuesta}"  />
-                                                            <f:validateRequired  />
-                                                        </h:selectOneMenu>
-                                                        <h:message for="pregunta" class="form-control alert alert-danger" ></h:message>
+                                                        
                                                     </ui:repeat>
                                                 </ol>
 
