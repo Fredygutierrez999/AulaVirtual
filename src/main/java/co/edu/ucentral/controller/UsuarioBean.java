@@ -40,7 +40,7 @@ public class UsuarioBean implements Serializable {
     private boolean espaniol;
     private boolean ingles;
     private String mensaje;
-    private boolean idioma;
+    private String idioma;
     @PostConstruct
     public void inicializar() {
         this.roles = this.rolService.listadoRol();
@@ -147,14 +147,14 @@ public class UsuarioBean implements Serializable {
     }
     
     public void validarIdioma() {
-        PrimeFaces pf = PrimeFaces.current();
-        pf.executeScript("aler('idioma')");
-        if (idioma) {
-             pf.executeScript("aler('ingles')");
-            FacesContext.getCurrentInstance().getApplication().setDefaultLocale(Locale.ENGLISH);
+        System.out.println("this.idioma = " + this.idioma);
+        
+        if (idioma.equals("ENG")) {
+            System.out.println("entra al ingles = " + this.idioma);
+         FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.forLanguageTag("en"));
         } else {
             
-            pf.executeScript("aler(' espaniol ')");
+            FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.getDefault());
         }
         
     }
@@ -187,14 +187,14 @@ public class UsuarioBean implements Serializable {
         this.ingles = ingles;
     }
 
-    public boolean isIdioma() {
+    public String getIdioma() {
         return idioma;
     }
 
-    public void setIdioma(boolean idioma) {
+    public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
-    
+
     
     
 }

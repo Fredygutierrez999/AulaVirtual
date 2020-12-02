@@ -48,20 +48,14 @@
                                                     <label class="small mb-1" for="inputPassword">#{msgs['login.lenguaje']}</label>
                                                     <div class="form-check">
 
-                                                        <input class="form-check-input" id="paisCol" name="chkpais" checked="checked" value="ESP" type="radio"/>
-                                                        <label class="form-check-label" for="paisCol">
-                                                            <img src="resources/imagenes/col.png"></img>
-                                                        </label>
-                                                        <br/>
+                                                        
                                                         <h:selectOneRadio id="item" class="form-check-input" value="#{usuarioBean.idioma}">
-                                                            <f:selectItem itemLabel="INGLES" itemValue="#{usuarioBean.ingles}" />
-                                                            <f:selectItem itemLabel="ESPAÑOL" itemValue="#{usuarioBean.espaniol}" />
-                                                            <f:ajax execute="@this" render="@this"  listener="#{usuarioBean.validarIdioma()}"/>
+                                                            <f:selectItem itemLabel="INGLES" itemValue="ENG" />
+                                                            <f:selectItem itemLabel="ESPAÑOL" itemValue="ESP" />
+                                                            <f:ajax execute="@this"  render="@all" listener="#{usuarioBean.validarIdioma()}"/>
                                                         </h:selectOneRadio>
-                                                        <input class="form-check-input" id="paisEeuu" checked=""  name="chkpais" value="ENG" type="radio"/>
-                                                        <label class="form-check-label" for="paisEeuu">
-                                                            <img src="resources/imagenes/eeuu.png"></img>
-                                                        </label>
+                                                        <br></br>
+                                                        <br></br>
                                                     </div>
                                                 </div>
                                                 <!-- Form Group (remember password checkbox)-->
